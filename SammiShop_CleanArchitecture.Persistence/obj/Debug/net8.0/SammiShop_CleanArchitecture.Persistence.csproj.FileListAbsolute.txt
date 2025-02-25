@@ -1,0 +1,12 @@
+C:\Users\buimi\Documents\CODE\C#\Tự Học\SammiShop_CleanArchitecture\SammiShop_CleanArchitecture.Persistence\bin\Debug\net8.0\SammiShop_CleanArchitecture.Persistence.deps.json
+C:\Users\buimi\Documents\CODE\C#\Tự Học\SammiShop_CleanArchitecture\SammiShop_CleanArchitecture.Persistence\bin\Debug\net8.0\SammiShop_CleanArchitecture.Persistence.dll
+C:\Users\buimi\Documents\CODE\C#\Tự Học\SammiShop_CleanArchitecture\SammiShop_CleanArchitecture.Persistence\bin\Debug\net8.0\SammiShop_CleanArchitecture.Persistence.pdb
+C:\Users\buimi\Documents\CODE\C#\Tự Học\SammiShop_CleanArchitecture\SammiShop_CleanArchitecture.Persistence\obj\Debug\net8.0\SammiShop_CleanArchitecture.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\buimi\Documents\CODE\C#\Tự Học\SammiShop_CleanArchitecture\SammiShop_CleanArchitecture.Persistence\obj\Debug\net8.0\SammiShop_CleanArchitecture.Persistence.AssemblyInfoInputs.cache
+C:\Users\buimi\Documents\CODE\C#\Tự Học\SammiShop_CleanArchitecture\SammiShop_CleanArchitecture.Persistence\obj\Debug\net8.0\SammiShop_CleanArchitecture.Persistence.AssemblyInfo.cs
+C:\Users\buimi\Documents\CODE\C#\Tự Học\SammiShop_CleanArchitecture\SammiShop_CleanArchitecture.Persistence\obj\Debug\net8.0\SammiShop_CleanArchitecture.Persistence.csproj.CoreCompileInputs.cache
+C:\Users\buimi\Documents\CODE\C#\Tự Học\SammiShop_CleanArchitecture\SammiShop_CleanArchitecture.Persistence\obj\Debug\net8.0\SammiShop_CleanArchitecture.Persistence.sourcelink.json
+C:\Users\buimi\Documents\CODE\C#\Tự Học\SammiShop_CleanArchitecture\SammiShop_CleanArchitecture.Persistence\obj\Debug\net8.0\SammiShop_CleanArchitecture.Persistence.dll
+C:\Users\buimi\Documents\CODE\C#\Tự Học\SammiShop_CleanArchitecture\SammiShop_CleanArchitecture.Persistence\obj\Debug\net8.0\refint\SammiShop_CleanArchitecture.Persistence.dll
+C:\Users\buimi\Documents\CODE\C#\Tự Học\SammiShop_CleanArchitecture\SammiShop_CleanArchitecture.Persistence\obj\Debug\net8.0\SammiShop_CleanArchitecture.Persistence.pdb
+C:\Users\buimi\Documents\CODE\C#\Tự Học\SammiShop_CleanArchitecture\SammiShop_CleanArchitecture.Persistence\obj\Debug\net8.0\ref\SammiShop_CleanArchitecture.Persistence.dll

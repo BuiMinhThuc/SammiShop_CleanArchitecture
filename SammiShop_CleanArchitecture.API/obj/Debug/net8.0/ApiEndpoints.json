@@ -1,0 +1,92 @@
+[
+  {
+    "ContainingType": "SammiShop_CleanArchitecture.API.Controllers.productTypesController",
+    "Method": "GetAllAsync",
+    "RelativePath": "api/productTypes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SammiShop_CleanArchitecture.API.Controllers.productTypesController",
+    "Method": "CreateAsync",
+    "RelativePath": "api/productTypes",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productTypeRequest",
+        "Type": "SammiShop_CleanArchitecture.API.Payload.Requests.CreateProductTypeRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SammiShop_CleanArchitecture.API.Controllers.productTypesController",
+    "Method": "GetByIdAsync",
+    "RelativePath": "api/productTypes/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SammiShop_CleanArchitecture.API.Controllers.productTypesController",
+    "Method": "UpdateByIdAsync",
+    "RelativePath": "api/productTypes/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "productTypeRequest",
+        "Type": "SammiShop_CleanArchitecture.API.Payload.Requests.CreateProductTypeRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SammiShop_CleanArchitecture.API.Controllers.productTypesController",
+    "Method": "DeleteById",
+    "RelativePath": "api/productTypes/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

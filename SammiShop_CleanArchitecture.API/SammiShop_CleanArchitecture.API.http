@@ -1,0 +1,6 @@
+@SammiShop_CleanArchitecture.API_HostAddress = http://localhost:5233
+
+GET {{SammiShop_CleanArchitecture.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

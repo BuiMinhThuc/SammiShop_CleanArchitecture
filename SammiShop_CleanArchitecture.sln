@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35806.99 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SammiShop_CleanArchitecture.API", "SammiShop_CleanArchitecture.API\SammiShop_CleanArchitecture.API.csproj", "{B4F2FDD3-2CE9-4F7E-86CC-B68A6F9959EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SammiShop_CleanArchitecture.Domain", "SammiShop_CleanArchitecture.Domain\SammiShop_CleanArchitecture.Domain.csproj", "{C3B4C0C2-BFDD-420E-81DC-24BA8B8DB923}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SammiShop_CleanArchitecture.Application", "SammiShop_CleanArchitecture.Application\SammiShop_CleanArchitecture.Application.csproj", "{FBCFCB1E-DD0A-4CA2-80AB-BB63AE6555C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SammiShop_CleanArchitecture.Infrastructure", "SammiShop_CleanArchitecture.Infrastructure\SammiShop_CleanArchitecture.Infrastructure.csproj", "{8BB8BE74-7C7A-4ABC-9F6E-A54CD1CAE671}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SammiShop_CleanArchitecture.Persistence", "SammiShop_CleanArchitecture.Persistence\SammiShop_CleanArchitecture.Persistence.csproj", "{4D0DAF83-BD86-4BE4-BBED-56AD1E0CD888}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B4F2FDD3-2CE9-4F7E-86CC-B68A6F9959EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4F2FDD3-2CE9-4F7E-86CC-B68A6F9959EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4F2FDD3-2CE9-4F7E-86CC-B68A6F9959EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4F2FDD3-2CE9-4F7E-86CC-B68A6F9959EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3B4C0C2-BFDD-420E-81DC-24BA8B8DB923}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3B4C0C2-BFDD-420E-81DC-24BA8B8DB923}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3B4C0C2-BFDD-420E-81DC-24BA8B8DB923}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3B4C0C2-BFDD-420E-81DC-24BA8B8DB923}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBCFCB1E-DD0A-4CA2-80AB-BB63AE6555C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBCFCB1E-DD0A-4CA2-80AB-BB63AE6555C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBCFCB1E-DD0A-4CA2-80AB-BB63AE6555C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBCFCB1E-DD0A-4CA2-80AB-BB63AE6555C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BB8BE74-7C7A-4ABC-9F6E-A54CD1CAE671}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BB8BE74-7C7A-4ABC-9F6E-A54CD1CAE671}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BB8BE74-7C7A-4ABC-9F6E-A54CD1CAE671}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BB8BE74-7C7A-4ABC-9F6E-A54CD1CAE671}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D0DAF83-BD86-4BE4-BBED-56AD1E0CD888}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D0DAF83-BD86-4BE4-BBED-56AD1E0CD888}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D0DAF83-BD86-4BE4-BBED-56AD1E0CD888}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D0DAF83-BD86-4BE4-BBED-56AD1E0CD888}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BE59FF24-3F11-4088-8216-A0B75BAB3CC9}
+	EndGlobalSection
+EndGlobal
