@@ -1,9 +1,4 @@
 ﻿using SammiShop_CleanArchitecture.Domain.Enumerates;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SammiShop_CleanArchitecture.Domain.Entities
 {
@@ -17,7 +12,7 @@ namespace SammiShop_CleanArchitecture.Domain.Entities
         public string Email { get; set; }
         public string? Address { get; set; }
         public string? FullName { get; set; }
-        public int? RoleId { get; set; }=(int) ConstantEnum.Role.Member;
+        public int? RoleId { get; set; } = (int)ConstantEnum.Role.Member;
         public virtual Role? Role { get; set; }
         public virtual ICollection<Bill>? Bills { get; set; }
         public virtual ICollection<ComfirmEmail>? ComfirmEmails { get; set; }
@@ -26,6 +21,6 @@ namespace SammiShop_CleanArchitecture.Domain.Entities
         public virtual ICollection<Feedback>? Feedbacks { get; set; }
 
 
-      
+
     }
 }

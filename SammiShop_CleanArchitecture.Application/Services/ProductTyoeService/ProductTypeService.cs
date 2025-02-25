@@ -3,12 +3,7 @@ using SammiShop_CleanArchitecture.Application.Domain;
 using SammiShop_CleanArchitecture.Application.Services.ProductService;
 using SammiShop_CleanArchitecture.Domain.Entities;
 using SammiShop_CleanArchitecture.Infrastructure.UnitOfWork;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SammiShop_CleanArchitecture.Application.Services.ProductTyoeService
 {
@@ -155,12 +150,12 @@ namespace SammiShop_CleanArchitecture.Application.Services.ProductTyoeService
             }
         }
 
-        public async Task<ProductType> UpdateByIdAsync(Guid id,ProductType entity)
+        public async Task<ProductType> UpdateByIdAsync(Guid id, ProductType entity)
         {
             await _uow.BeginTransactionAsync();
             try
             {
-               var productType= await _uow.GetGenericReponsitory<ProductType>().UpdateByIdAsync(id, entity);
+                var productType = await _uow.GetGenericReponsitory<ProductType>().UpdateByIdAsync(id, entity);
                 await _uow.SaveChangeAsync();
                 await _uow.CommitTransactionAsync();
                 return productType;

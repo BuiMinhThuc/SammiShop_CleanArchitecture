@@ -1,17 +1,11 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using SammiShop_CleanArchitecture.API.Payload.DTOs;
 using SammiShop_CleanArchitecture.API.Payload.Requests;
-
-using SammiShop_CleanArchitecture.API.Payload.Requests;
+using SammiShop_CleanArchitecture.Application.API.Mappers;
+using SammiShop_CleanArchitecture.Application.Domain;
+using SammiShop_CleanArchitecture.Application.Payload.Response;
 using SammiShop_CleanArchitecture.Application.Services.ProductService;
 using SammiShop_CleanArchitecture.Domain.Entities;
-using SammiShop_CleanArchitecture.Infrastructure.UnitOfWork;
-using SammiShop_CleanArchitecture.Infrastructure.UnitOfWork.Repositories;
-using SammiShop_CleanArchitecture.Application.API.Mappers;
-using SammiShop_CleanArchitecture.Application.Payload.Response;
-using SammiShop_CleanArchitecture.API.Payload.DTOs;
-using Microsoft.EntityFrameworkCore;
-using SammiShop_CleanArchitecture.Application.Domain;
 
 namespace SammiShop_CleanArchitecture.API.Controllers
 {
@@ -25,7 +19,7 @@ namespace SammiShop_CleanArchitecture.API.Controllers
 
         public productTypesController(IProductTypeService productTypeService,
              ResponseObject<ProductTypeDTO> responseObject)
-        { 
+        {
             _productTypeService = productTypeService;
             _responseObject = responseObject;
         }
@@ -69,13 +63,13 @@ namespace SammiShop_CleanArchitecture.API.Controllers
 
             var result = await _productTypeService.CreateAsync(productType);
 
-            return Ok(_responseObject.Success("Thêm loại sản phẩm mới thành công !",ProductTypeConverter.EntitytoDTO(result)));
+            return Ok(_responseObject.Success("Thêm loại sản phẩm mới thành công !", ProductTypeConverter.EntitytoDTO(result)));
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateByIdAsync(Guid id,CreateProductTypeRequest productTypeRequest)
+        public async Task<IActionResult> UpdateByIdAsync(Guid id, CreateProductTypeRequest productTypeRequest)
         {
-            if(!await IsExistById(id))
+            if (!await IsExistById(id))
             {
                 return NotFound(_responseObject.Error(StatusCodes.Status404NotFound, "Không có loại sản phẩm này!", null));
             }
@@ -97,12 +91,12 @@ namespace SammiShop_CleanArchitecture.API.Controllers
                 return NotFound(_responseObject.Error(StatusCodes.Status404NotFound, "Không có loại sản phẩm này!", null));
             }
             await _productTypeService.DeleteByIdAsync(id);
-          
+
             return Ok(_responseObject.Success("Xóa loại sản phẩm thành công !", null));
         }
-       
 
-       
+
+
 
         #region CheckExist
         private async Task<bool> IsExistById(Guid id)

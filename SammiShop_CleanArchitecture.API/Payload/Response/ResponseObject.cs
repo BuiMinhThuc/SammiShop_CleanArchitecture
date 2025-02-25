@@ -1,18 +1,11 @@
-﻿using Microsoft.AspNetCore.Http;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SammiShop_CleanArchitecture.Application.Payload.Response
+﻿namespace SammiShop_CleanArchitecture.Application.Payload.Response
 {
-    public  class ResponseObject<T> 
+    public class ResponseObject<T>
     {
 
-        public  int Status { get; set; }
-        public  string Message { get; set; }
-        public  T Data { get; set; }
+        public int Status { get; set; }
+        public string Message { get; set; }
+        public T Data { get; set; }
 
         public ResponseObject() { }
 
@@ -33,7 +26,7 @@ namespace SammiShop_CleanArchitecture.Application.Payload.Response
                 Data = data
             };
         }
-        public ResponseObject<T> Error(int status,string message, T data)
+        public ResponseObject<T> Error(int status, string message, T data)
         {
             return new ResponseObject<T>
             {

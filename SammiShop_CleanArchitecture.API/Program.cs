@@ -1,5 +1,4 @@
 using SammiShop_CleanArchitecture.API.Installers;
-using SammiShop_CleanArchitecture.Infrastructure.UnitOfWork;
 
 var builder = WebApplication.CreateBuilder(args);
 

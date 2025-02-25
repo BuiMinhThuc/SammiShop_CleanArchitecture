@@ -1,10 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SammiShop_CleanArchitecture.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SammiShop_CleanArchitecture.Infrastructure.Data
 {

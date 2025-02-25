@@ -1,20 +1,13 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Storage;
-using SammiShop_CleanArchitecture.Domain.Entities;
+﻿using Microsoft.EntityFrameworkCore.Storage;
 using SammiShop_CleanArchitecture.Infrastructure.Data;
 using SammiShop_CleanArchitecture.Infrastructure.UnitOfWork.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SammiShop_CleanArchitecture.Infrastructure.UnitOfWork
 {
     public class UnitOfWork : IUnitOfWork
     {
         private AppDbContext dbContext { get; }
-        
+
         private IDbContextTransaction _transaction;
         private Dictionary<Type, object> _repositories;
 
@@ -22,12 +15,12 @@ namespace SammiShop_CleanArchitecture.Infrastructure.UnitOfWork
             )
         {
             dbContext = _dbContext;
-        
+
 
             _repositories = new Dictionary<Type, object>();
-        
+
         }
-        
+
 
         public async Task<int> SaveChangeAsync()
         {
@@ -44,13 +37,13 @@ namespace SammiShop_CleanArchitecture.Infrastructure.UnitOfWork
         {
             if (!this.dispose)
             {
-                
-                    if (disposing)
-                    {
-                        dbContext.Dispose();
-                    }
-                
-                     this.dispose= true;
+
+                if (disposing)
+                {
+                    dbContext.Dispose();
+                }
+
+                this.dispose = true;
             }
         }
 
@@ -67,7 +60,7 @@ namespace SammiShop_CleanArchitecture.Infrastructure.UnitOfWork
 
         public async Task BeginTransactionAsync()
         {
-             _transaction = await dbContext.Database.BeginTransactionAsync();
+            _transaction = await dbContext.Database.BeginTransactionAsync();
         }
 
         public async Task CommitTransactionAsync()
@@ -88,11 +81,11 @@ namespace SammiShop_CleanArchitecture.Infrastructure.UnitOfWork
 
         public async Task RollbackTransactionAsync()
         {
-            if(_transaction != null)
+            if (_transaction != null)
             {
                 await _transaction.RollbackAsync();
                 await _transaction.DisposeAsync();
-                _transaction =null;
+                _transaction = null;
             }
         }
     }

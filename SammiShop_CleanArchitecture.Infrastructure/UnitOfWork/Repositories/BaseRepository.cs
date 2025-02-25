@@ -1,18 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SammiShop_CleanArchitecture.Infrastructure.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SammiShop_CleanArchitecture.Infrastructure.UnitOfWork.Repositories
 {
-    public class BaseRepository<TEntity>: IBaseReponsetory<TEntity> where TEntity : class
-        
+    public class BaseRepository<TEntity> : IBaseReponsetory<TEntity> where TEntity : class
+
     {
-       
+
         public DbContext DbContext { get; set; }
         public BaseRepository(AppDbContext dbContext)
         {
@@ -22,7 +17,7 @@ namespace SammiShop_CleanArchitecture.Infrastructure.UnitOfWork.Repositories
         {
             get
             {
-               
+
                 return DbContext.Set<TEntity>();
             }
         }
@@ -35,7 +30,7 @@ namespace SammiShop_CleanArchitecture.Infrastructure.UnitOfWork.Repositories
         public async Task<IEnumerable<TEntity>> CreateAsync(IEnumerable<TEntity> entities)
         {
             await DbSet.AddRangeAsync(entities);
-            return entities;    
+            return entities;
         }
         public async Task DeleteByIdAsync(Guid id)
         {
@@ -45,10 +40,10 @@ namespace SammiShop_CleanArchitecture.Infrastructure.UnitOfWork.Repositories
                 return;
             }
 
-            DbSet.Remove(entity); 
+            DbSet.Remove(entity);
             return;
         }
-        public async Task DeleteAsync(Expression<Func<TEntity, bool>> expression )
+        public async Task DeleteAsync(Expression<Func<TEntity, bool>> expression)
         {
             var entities = expression == null
                 ? await DbSet.ToListAsync()
@@ -58,9 +53,9 @@ namespace SammiShop_CleanArchitecture.Infrastructure.UnitOfWork.Repositories
             {
                 return;
             }
-            DbSet.RemoveRange(entities); 
+            DbSet.RemoveRange(entities);
             return;
-          
+
         }
 
         public Task<IQueryable<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>> expression = null)
@@ -85,7 +80,7 @@ namespace SammiShop_CleanArchitecture.Infrastructure.UnitOfWork.Repositories
         public async Task<TEntity> UpdateByIdAsync(Guid id, TEntity entity)
         {
             DbSet.Update(entity);
-            return entity; 
+            return entity;
         }
 
         public async Task<IEnumerable<TEntity>> UpdateAsync(IEnumerable<TEntity> entities)
@@ -94,7 +89,7 @@ namespace SammiShop_CleanArchitecture.Infrastructure.UnitOfWork.Repositories
             return entities;
         }
 
-        
+
     }
-    
+
 }
