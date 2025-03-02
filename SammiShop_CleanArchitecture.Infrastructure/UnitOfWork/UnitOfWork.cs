@@ -2,20 +2,22 @@
 using SammiShop_CleanArchitecture.Infrastructure.Data;
 using SammiShop_CleanArchitecture.Infrastructure.UnitOfWork.Repositories;
 
+
 namespace SammiShop_CleanArchitecture.Infrastructure.UnitOfWork
 {
     public class UnitOfWork : IUnitOfWork
     {
         private AppDbContext dbContext { get; }
 
+
         private IDbContextTransaction _transaction;
         private Dictionary<Type, object> _repositories;
 
         public UnitOfWork(AppDbContext _dbContext
+
             )
         {
             dbContext = _dbContext;
-
 
             _repositories = new Dictionary<Type, object>();
 
@@ -48,6 +50,7 @@ namespace SammiShop_CleanArchitecture.Infrastructure.UnitOfWork
         }
 
         public IBaseReponsetory<TEntity> GetGenericReponsitory<TEntity>() where TEntity : class
+
         {
             if (_repositories.ContainsKey(typeof(TEntity)))
             {

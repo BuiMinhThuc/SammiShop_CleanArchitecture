@@ -1,4 +1,6 @@
-﻿using SammiShop_CleanArchitecture.Domain.Constants;
+﻿using Microsoft.AspNetCore.Http;
+using SammiShop_CleanArchitecture.Domain.Constants;
+using SixLabors.ImageSharp.PixelFormats;
 using System.ComponentModel.DataAnnotations;
 using System.Text.RegularExpressions;
 
@@ -12,7 +14,7 @@ namespace SammiShop_CleanArchitecture.Domain.Extensions
             {
                 return false;
             }
-            if (username.Length < ConstantDomain.MIN_USERNAME || username.Length > ConstantDomain.MAX_USERNAME)
+            if (username.Length < ConstantDomain.MIN_USERNAME_LENGTH || username.Length > ConstantDomain.MAX_USERNAME_LENGTH)
             {
                 return false;
             }
@@ -29,8 +31,8 @@ namespace SammiShop_CleanArchitecture.Domain.Extensions
         {
 
 
-            if (password.Length < ConstantDomain.MIN_PASSWORD
-                || password.Length > ConstantDomain.MAX_PASSWORD
+            if (password.Length < ConstantDomain.MIN_PASSWORD_LENGTH
+                || password.Length > ConstantDomain.MAX_PASSWORD_LENGTH
                 || !new Regex(ConstantDomain.PASSWORD_REGEX).IsMatch(password))
                 return false;
             else
@@ -50,16 +52,25 @@ namespace SammiShop_CleanArchitecture.Domain.Extensions
             {
                 return false;
             }
-            if (Regex.IsMatch(phoneNumber, ConstantDomain.NUMBER_REGEX))
+            if (!Regex.IsMatch(phoneNumber, ConstantDomain.PHONENUMBER_REGEX))
             {
                 return false;
 
             }
             return true;
         }
+        public static async Task<string> RandomOTP()
+        {
+            return await Task.Run(() =>
+            {
+                Random random = new Random();
+                int otp = random.Next(0, 1000000);
+                return otp.ToString("D6");
+            });
+        }
 
         // TODO: Check if the image is valid
-        /*public static bool IsImage(IFormFile imageFile)
+        public static bool IsImage(IFormFile imageFile)
         {
             int maxSizeInBytes = (2 * 1024 * 768);
             try
@@ -92,6 +103,6 @@ namespace SammiShop_CleanArchitecture.Domain.Extensions
                 }
             }
             return false;
-        }*/
+        }
     }
 }

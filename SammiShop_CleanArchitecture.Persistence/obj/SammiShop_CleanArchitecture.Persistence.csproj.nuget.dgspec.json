@@ -4,14 +4,94 @@
     "C:\\Users\\buimi\\Documents\\CODE\\C#\\Tự Học\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Persistence\\SammiShop_CleanArchitecture.Persistence.csproj": {}
   },
   "projects": {
-    "C:\\Users\\buimi\\Documents\\CODE\\C#\\Tự Học\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Persistence\\SammiShop_CleanArchitecture.Persistence.csproj": {
+    "C:\\Users\\buimi\\Documents\\CODE\\C#\\Tự Học\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Application\\SammiShop_CleanArchitecture.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\buimi\\Documents\\CODE\\C#\\Tự Học\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Persistence\\SammiShop_CleanArchitecture.Persistence.csproj",
-        "projectName": "SammiShop_CleanArchitecture.Persistence",
-        "projectPath": "C:\\Users\\buimi\\Documents\\CODE\\C#\\Tự Học\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Persistence\\SammiShop_CleanArchitecture.Persistence.csproj",
+        "projectUniqueName": "C:\\Users\\buimi\\Documents\\CODE\\C#\\Tự Học\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Application\\SammiShop_CleanArchitecture.Application.csproj",
+        "projectName": "SammiShop_CleanArchitecture.Application",
+        "projectPath": "C:\\Users\\buimi\\Documents\\CODE\\C#\\Tự Học\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Application\\SammiShop_CleanArchitecture.Application.csproj",
         "packagesPath": "C:\\Users\\buimi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\buimi\\Documents\\CODE\\C#\\Tự Học\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Persistence\\obj\\",
+        "outputPath": "C:\\Users\\buimi\\Documents\\CODE\\C#\\Tự Học\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\buimi\\NuGet.Config",
+          "C:\\Users\\buimi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\buimi\\Documents\\CODE\\C#\\Tự Học\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Domain\\SammiShop_CleanArchitecture.Domain.csproj": {
+                "projectPath": "C:\\Users\\buimi\\Documents\\CODE\\C#\\Tự Học\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Domain\\SammiShop_CleanArchitecture.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[14.0.0, )"
+            },
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.3.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\buimi\\Documents\\CODE\\C#\\Tự Học\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Domain\\SammiShop_CleanArchitecture.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\buimi\\Documents\\CODE\\C#\\Tự Học\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Domain\\SammiShop_CleanArchitecture.Domain.csproj",
+        "projectName": "SammiShop_CleanArchitecture.Domain",
+        "projectPath": "C:\\Users\\buimi\\Documents\\CODE\\C#\\Tự Học\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Domain\\SammiShop_CleanArchitecture.Domain.csproj",
+        "packagesPath": "C:\\Users\\buimi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\buimi\\Documents\\CODE\\C#\\Tự Học\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -50,6 +130,206 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[2.3.0, )"
+            },
+            "SixLabors.ImageSharp": {
+              "target": "Package",
+              "version": "[3.1.6, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\buimi\\Documents\\CODE\\C#\\Tự Học\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Infrastructure\\SammiShop_CleanArchitecture.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\buimi\\Documents\\CODE\\C#\\Tự Học\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Infrastructure\\SammiShop_CleanArchitecture.Infrastructure.csproj",
+        "projectName": "SammiShop_CleanArchitecture.Infrastructure",
+        "projectPath": "C:\\Users\\buimi\\Documents\\CODE\\C#\\Tự Học\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Infrastructure\\SammiShop_CleanArchitecture.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\buimi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\buimi\\Documents\\CODE\\C#\\Tự Học\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\buimi\\NuGet.Config",
+          "C:\\Users\\buimi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\buimi\\Documents\\CODE\\C#\\Tự Học\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Application\\SammiShop_CleanArchitecture.Application.csproj": {
+                "projectPath": "C:\\Users\\buimi\\Documents\\CODE\\C#\\Tự Học\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Application\\SammiShop_CleanArchitecture.Application.csproj"
+              },
+              "C:\\Users\\buimi\\Documents\\CODE\\C#\\Tự Học\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Domain\\SammiShop_CleanArchitecture.Domain.csproj": {
+                "projectPath": "C:\\Users\\buimi\\Documents\\CODE\\C#\\Tự Học\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Domain\\SammiShop_CleanArchitecture.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "CloudinaryDotNet": {
+              "target": "Package",
+              "version": "[1.27.4, )"
+            },
+            "MailKit": {
+              "target": "Package",
+              "version": "[4.10.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[9.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.2, )"
+            },
+            "MimeKit": {
+              "target": "Package",
+              "version": "[4.10.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\buimi\\Documents\\CODE\\C#\\Tự Học\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Persistence\\SammiShop_CleanArchitecture.Persistence.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\buimi\\Documents\\CODE\\C#\\Tự Học\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Persistence\\SammiShop_CleanArchitecture.Persistence.csproj",
+        "projectName": "SammiShop_CleanArchitecture.Persistence",
+        "projectPath": "C:\\Users\\buimi\\Documents\\CODE\\C#\\Tự Học\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Persistence\\SammiShop_CleanArchitecture.Persistence.csproj",
+        "packagesPath": "C:\\Users\\buimi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\buimi\\Documents\\CODE\\C#\\Tự Học\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Persistence\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\buimi\\NuGet.Config",
+          "C:\\Users\\buimi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\buimi\\Documents\\CODE\\C#\\Tự Học\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Application\\SammiShop_CleanArchitecture.Application.csproj": {
+                "projectPath": "C:\\Users\\buimi\\Documents\\CODE\\C#\\Tự Học\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Application\\SammiShop_CleanArchitecture.Application.csproj"
+              },
+              "C:\\Users\\buimi\\Documents\\CODE\\C#\\Tự Học\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Infrastructure\\SammiShop_CleanArchitecture.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\buimi\\Documents\\CODE\\C#\\Tự Học\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Infrastructure\\SammiShop_CleanArchitecture.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.6.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

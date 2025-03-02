@@ -4,7 +4,9 @@ namespace SammiShop_CleanArchitecture.Infrastructure.UnitOfWork
 {
     public interface IUnitOfWork : IDisposable
     {
-        IBaseReponsetory<TEntity> GetGenericReponsitory<TEntity>() where TEntity : class;
+        IBaseReponsetory<TEntity> GetGenericReponsitory<TEntity>()
+         where TEntity : class;
+
         Task<int> SaveChangeAsync();
         Task BeginTransactionAsync();
         Task CommitTransactionAsync();

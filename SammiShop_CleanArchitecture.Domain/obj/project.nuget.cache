@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "m4eokGRJF7c=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\buimi\\Documents\\CODE\\C#\\Tự Học\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Domain\\SammiShop_CleanArchitecture.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\buimi\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.3.0\\microsoft.aspnetcore.http.features.2.3.0.nupkg.sha512",
+    "C:\\Users\\buimi\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "C:\\Users\\buimi\\.nuget\\packages\\sixlabors.imagesharp\\3.1.6\\sixlabors.imagesharp.3.1.6.nupkg.sha512"
+  ],
+  "logs": []
+}

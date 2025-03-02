@@ -1,0 +1,13 @@
+C:\Users\buimi\Documents\CODE\C#\Tự Học\SammiShop_CleanArchitecture\SammiShop_CleanArchitecture.Domain\obj\Debug\net8.0\SammiShop_CleanArchitecture.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\buimi\Documents\CODE\C#\Tự Học\SammiShop_CleanArchitecture\SammiShop_CleanArchitecture.Domain\obj\Debug\net8.0\SammiShop_CleanArchitecture.Domain.AssemblyInfoInputs.cache
+C:\Users\buimi\Documents\CODE\C#\Tự Học\SammiShop_CleanArchitecture\SammiShop_CleanArchitecture.Domain\obj\Debug\net8.0\SammiShop_CleanArchitecture.Domain.AssemblyInfo.cs
+C:\Users\buimi\Documents\CODE\C#\Tự Học\SammiShop_CleanArchitecture\SammiShop_CleanArchitecture.Domain\obj\Debug\net8.0\SammiShop_CleanArchitecture.Domain.csproj.CoreCompileInputs.cache
+C:\Users\buimi\Documents\CODE\C#\Tự Học\SammiShop_CleanArchitecture\SammiShop_CleanArchitecture.Domain\obj\Debug\net8.0\SammiShop_CleanArchitecture.Domain.sourcelink.json
+C:\Users\buimi\Documents\CODE\C#\Tự Học\SammiShop_CleanArchitecture\SammiShop_CleanArchitecture.Domain\bin\Debug\net8.0\SammiShop_CleanArchitecture.Domain.deps.json
+C:\Users\buimi\Documents\CODE\C#\Tự Học\SammiShop_CleanArchitecture\SammiShop_CleanArchitecture.Domain\bin\Debug\net8.0\SammiShop_CleanArchitecture.Domain.dll
+C:\Users\buimi\Documents\CODE\C#\Tự Học\SammiShop_CleanArchitecture\SammiShop_CleanArchitecture.Domain\bin\Debug\net8.0\SammiShop_CleanArchitecture.Domain.pdb
+C:\Users\buimi\Documents\CODE\C#\Tự Học\SammiShop_CleanArchitecture\SammiShop_CleanArchitecture.Domain\obj\Debug\net8.0\SammiShop_CleanArchitecture.Domain.dll
+C:\Users\buimi\Documents\CODE\C#\Tự Học\SammiShop_CleanArchitecture\SammiShop_CleanArchitecture.Domain\obj\Debug\net8.0\refint\SammiShop_CleanArchitecture.Domain.dll
+C:\Users\buimi\Documents\CODE\C#\Tự Học\SammiShop_CleanArchitecture\SammiShop_CleanArchitecture.Domain\obj\Debug\net8.0\SammiShop_CleanArchitecture.Domain.pdb
+C:\Users\buimi\Documents\CODE\C#\Tự Học\SammiShop_CleanArchitecture\SammiShop_CleanArchitecture.Domain\obj\Debug\net8.0\ref\SammiShop_CleanArchitecture.Domain.dll
+C:\Users\buimi\Documents\CODE\C#\Tự Học\SammiShop_CleanArchitecture\SammiShop_CleanArchitecture.Domain\obj\Debug\net8.0\SammiShop_CleanArchitecture.Domain.csproj.AssemblyReference.cache

@@ -8,12 +8,15 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SammiShop_CleanArchitecture.Domain\SammiShop_CleanArchitecture.Domain.csproj" />
-    <ProjectReference Include="..\SammiShop_CleanArchitecture.Infrastructure\SammiShop_CleanArchitecture.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="14.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Extensions\" />
   </ItemGroup>
 
 </Project>

@@ -78,7 +78,7 @@ namespace SammiShop_CleanArchitecture.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("Exprited")
+                    b.Property<DateTime>("Expired")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Otp")
@@ -121,7 +121,7 @@ namespace SammiShop_CleanArchitecture.Infrastructure.Migrations
                     b.ToTable("Feedbacks");
                 });
 
-            modelBuilder.Entity("SammiShop_CleanArchitecture.Domain.Entities.HistorryPay", b =>
+            modelBuilder.Entity("SammiShop_CleanArchitecture.Domain.Entities.HistoryPay", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -205,7 +205,7 @@ namespace SammiShop_CleanArchitecture.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("Exprited")
+                    b.Property<DateTime>("Expired")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Token")
@@ -224,11 +224,9 @@ namespace SammiShop_CleanArchitecture.Infrastructure.Migrations
 
             modelBuilder.Entity("SammiShop_CleanArchitecture.Domain.Entities.Role", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("KeyRole")
                         .IsRequired()
@@ -237,18 +235,6 @@ namespace SammiShop_CleanArchitecture.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Roles");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            KeyRole = "Admin"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            KeyRole = "Member"
-                        });
                 });
 
             modelBuilder.Entity("SammiShop_CleanArchitecture.Domain.Entities.Trademark", b =>
@@ -261,7 +247,7 @@ namespace SammiShop_CleanArchitecture.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("TradamarkName")
+                    b.Property<string>("TrademarkName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -293,8 +279,8 @@ namespace SammiShop_CleanArchitecture.Infrastructure.Migrations
                     b.Property<string>("PhoneNumber")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("RoleId")
-                        .HasColumnType("int");
+                    b.Property<Guid?>("RoleId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("UrlAvt")
                         .HasColumnType("nvarchar(max)");
@@ -362,10 +348,10 @@ namespace SammiShop_CleanArchitecture.Infrastructure.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("SammiShop_CleanArchitecture.Domain.Entities.HistorryPay", b =>
+            modelBuilder.Entity("SammiShop_CleanArchitecture.Domain.Entities.HistoryPay", b =>
                 {
                     b.HasOne("SammiShop_CleanArchitecture.Domain.Entities.Bill", "Bill")
-                        .WithMany("HistorryPays")
+                        .WithMany("HistoryPays")
                         .HasForeignKey("BillId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -422,7 +408,7 @@ namespace SammiShop_CleanArchitecture.Infrastructure.Migrations
 
             modelBuilder.Entity("SammiShop_CleanArchitecture.Domain.Entities.Bill", b =>
                 {
-                    b.Navigation("HistorryPays");
+                    b.Navigation("HistoryPays");
                 });
 
             modelBuilder.Entity("SammiShop_CleanArchitecture.Domain.Entities.Product", b =>

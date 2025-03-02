@@ -1,8 +1,8 @@
 [
   {
-    "ContainingType": "SammiShop_CleanArchitecture.API.Controllers.productTypesController",
+    "ContainingType": "SammiShop_CleanArchitecture.API.Controllers.CardController",
     "Method": "GetAllAsync",
-    "RelativePath": "api/productTypes",
+    "RelativePath": "api/cards",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -21,25 +21,120 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "SammiShop_CleanArchitecture.API.Controllers.productTypesController",
-    "Method": "CreateAsync",
-    "RelativePath": "api/productTypes",
+    "ContainingType": "SammiShop_CleanArchitecture.API.Controllers.CardController",
+    "Method": "AddAsync",
+    "RelativePath": "api/cards",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "productTypeRequest",
-        "Type": "SammiShop_CleanArchitecture.API.Payload.Requests.CreateProductTypeRequest",
+        "Name": "request",
+        "Type": "SammiShop_CleanArchitecture.Application.Payload.Requests.CardRequest.CreateCardRequest",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "SammiShop_CleanArchitecture.API.Controllers.productTypesController",
+    "ContainingType": "SammiShop_CleanArchitecture.API.Controllers.CardController",
+    "Method": "UpdateAsync",
+    "RelativePath": "api/cards",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "SammiShop_CleanArchitecture.Application.Payload.Requests.CardRequest.UpdateCardRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SammiShop_CleanArchitecture.API.Controllers.CardController",
+    "Method": "DeleteAsync",
+    "RelativePath": "api/cards",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cardId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SammiShop_CleanArchitecture.API.Controllers.CardController",
     "Method": "GetByIdAsync",
-    "RelativePath": "api/productTypes/{id}",
+    "RelativePath": "api/cards/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SammiShop_CleanArchitecture.API.Controllers.CardController",
+    "Method": "GetByUserIdAsync",
+    "RelativePath": "api/cards/getbyuserid",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SammiShop_CleanArchitecture.API.Controllers.ProductController",
+    "Method": "GetAllAsync",
+    "RelativePath": "api/products",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SammiShop_CleanArchitecture.API.Controllers.ProductController",
+    "Method": "CreateAsync",
+    "RelativePath": "api/products",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productRequest",
+        "Type": "SammiShop_CleanArchitecture.Application.Payload.Requests.ProductRequest.CreateProductRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SammiShop_CleanArchitecture.API.Controllers.ProductController",
+    "Method": "GetProductByIdAsync",
+    "RelativePath": "api/products/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -50,33 +145,34 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [],
+    "EndpointName": "GetProductByIdAsync"
   },
   {
-    "ContainingType": "SammiShop_CleanArchitecture.API.Controllers.productTypesController",
-    "Method": "UpdateByIdAsync",
-    "RelativePath": "api/productTypes/{id}",
+    "ContainingType": "SammiShop_CleanArchitecture.API.Controllers.ProductController",
+    "Method": "UpdateAsync",
+    "RelativePath": "api/products/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
-        "Type": "System.Guid",
+        "Name": "request",
+        "Type": "SammiShop_CleanArchitecture.Application.Payload.Requests.ProductRequest.UpdateProductRequest",
         "IsRequired": true
       },
       {
-        "Name": "productTypeRequest",
-        "Type": "SammiShop_CleanArchitecture.API.Payload.Requests.CreateProductTypeRequest",
+        "Name": "id",
+        "Type": "",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "SammiShop_CleanArchitecture.API.Controllers.productTypesController",
-    "Method": "DeleteById",
-    "RelativePath": "api/productTypes/{id}",
+    "ContainingType": "SammiShop_CleanArchitecture.API.Controllers.ProductController",
+    "Method": "DeleteAsync",
+    "RelativePath": "api/products/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -84,6 +180,453 @@
       {
         "Name": "id",
         "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SammiShop_CleanArchitecture.API.Controllers.ProductTypeController",
+    "Method": "GetAllAsync",
+    "RelativePath": "api/producttypes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SammiShop_CleanArchitecture.API.Controllers.ProductTypeController",
+    "Method": "CreateAsync",
+    "RelativePath": "api/producttypes",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productTypeRequest",
+        "Type": "SammiShop_CleanArchitecture.Application.Payload.Requests.ProductTypeRequest.CreateProductTypeRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SammiShop_CleanArchitecture.API.Controllers.ProductTypeController",
+    "Method": "GetProductTypeByIdAsync",
+    "RelativePath": "api/producttypes/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "GetProductTypeByIdAsync"
+  },
+  {
+    "ContainingType": "SammiShop_CleanArchitecture.API.Controllers.ProductTypeController",
+    "Method": "UpdateByIdAsync",
+    "RelativePath": "api/producttypes/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productTypeRequest",
+        "Type": "SammiShop_CleanArchitecture.Application.Payload.Requests.ProductTypeRequest.UpdateProductTypeRequest",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SammiShop_CleanArchitecture.API.Controllers.ProductTypeController",
+    "Method": "DeleteById",
+    "RelativePath": "api/producttypes/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SammiShop_CleanArchitecture.API.Controllers.RoleController",
+    "Method": "GetAllAsync",
+    "RelativePath": "api/roles",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SammiShop_CleanArchitecture.API.Controllers.RoleController",
+    "Method": "CreateAsync",
+    "RelativePath": "api/roles",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "roleRequest",
+        "Type": "SammiShop_CleanArchitecture.Application.Payload.Requests.RoleRequest.CreateRoleRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SammiShop_CleanArchitecture.API.Controllers.RoleController",
+    "Method": "GetRoleByIdAsync",
+    "RelativePath": "api/roles/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "GetRoleByIdAsync"
+  },
+  {
+    "ContainingType": "SammiShop_CleanArchitecture.API.Controllers.RoleController",
+    "Method": "UpdateAsync",
+    "RelativePath": "api/roles/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "roleRequest",
+        "Type": "SammiShop_CleanArchitecture.Application.Payload.Requests.RoleRequest.UpdateRoleRequest",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SammiShop_CleanArchitecture.API.Controllers.RoleController",
+    "Method": "DeleteAsync",
+    "RelativePath": "api/roles/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SammiShop_CleanArchitecture.API.Controllers.TrademarkController",
+    "Method": "GetAllAsync",
+    "RelativePath": "api/trademarks",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SammiShop_CleanArchitecture.API.Controllers.TrademarkController",
+    "Method": "CreateAsync",
+    "RelativePath": "api/trademarks",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "trademarkRequest",
+        "Type": "SammiShop_CleanArchitecture.Application.Payload.Requests.TrademarkRequest.CreateTrademarkRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SammiShop_CleanArchitecture.API.Controllers.TrademarkController",
+    "Method": "GetTrademarkByIdAsync",
+    "RelativePath": "api/trademarks/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "GetTrademarkByIdAsync"
+  },
+  {
+    "ContainingType": "SammiShop_CleanArchitecture.API.Controllers.TrademarkController",
+    "Method": "UpdateByIdAsync",
+    "RelativePath": "api/trademarks/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entityRequest",
+        "Type": "SammiShop_CleanArchitecture.Application.Payload.Requests.TrademarkRequest.UpdateTrademarkRequest",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SammiShop_CleanArchitecture.API.Controllers.TrademarkController",
+    "Method": "DeleteByIdAsync",
+    "RelativePath": "api/trademarks/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SammiShop_CleanArchitecture.API.Controllers.UserController",
+    "Method": "GetAllAsync",
+    "RelativePath": "api/users",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SammiShop_CleanArchitecture.API.Controllers.UserController",
+    "Method": "CreateAsync",
+    "RelativePath": "api/users",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "UserName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "PassWord",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "PhoneNumber",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "UrlAvt",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Address",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "FullName",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SammiShop_CleanArchitecture.API.Controllers.UserController",
+    "Method": "GetUserByIdAsync",
+    "RelativePath": "api/users/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "GetUserByIdAsync"
+  },
+  {
+    "ContainingType": "SammiShop_CleanArchitecture.API.Controllers.UserController",
+    "Method": "ActiceAccount",
+    "RelativePath": "api/users/ActivateAccount",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "otp",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SammiShop_CleanArchitecture.API.Controllers.UserController",
+    "Method": "UpdateByAdminAsync",
+    "RelativePath": "api/users/admin/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "SammiShop_CleanArchitecture.Application.Payload.Requests.UserRequest.UpdateUserByAdminRequest",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SammiShop_CleanArchitecture.API.Controllers.UserController",
+    "Method": "LoginAsync",
+    "RelativePath": "api/users/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "SammiShop_CleanArchitecture.Application.Payload.Requests.UserRequest.LoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SammiShop_CleanArchitecture.API.Controllers.UserController",
+    "Method": "RenewTokenAsync",
+    "RelativePath": "api/users/renew-Token",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "refreshToken",
+        "Type": "SammiShop_CleanArchitecture.Persistence.Domain.Token",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SammiShop_CleanArchitecture.API.Controllers.UserController",
+    "Method": "UpdateByMemberAsync",
+    "RelativePath": "api/users/users/member/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "SammiShop_CleanArchitecture.Application.Payload.Requests.UserRequest.UpdateUserByMemberRequest",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "",
         "IsRequired": true
       }
     ],

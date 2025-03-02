@@ -12,6 +12,6 @@
         public virtual ProductType? ProductType { get; set; }
         public virtual Trademark? Trademark { get; set; }
         public virtual ICollection<Card>? Cards { get; set; }
-        public virtual ICollection<HistorryPay>? HistorryPays { get; set; }
+        public virtual ICollection<HistoryPay>? HistorryPays { get; set; }
     }
 }
