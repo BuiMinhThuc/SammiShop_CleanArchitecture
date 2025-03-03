@@ -49,12 +49,12 @@ namespace SammiShop_CleanArchitecture.Infrastructure.UnitOfWork
             }
         }
 
-        public IBaseReponsetory<TEntity> GetGenericReponsitory<TEntity>() where TEntity : class
+        public IBaseReponsitory<TEntity> GetGenericReponsitory<TEntity>() where TEntity : class
 
         {
             if (_repositories.ContainsKey(typeof(TEntity)))
             {
-                return _repositories[typeof(TEntity)] as IBaseReponsetory<TEntity>;
+                return _repositories[typeof(TEntity)] as IBaseReponsitory<TEntity>;
             }
             var repository = new BaseRepository<TEntity>(dbContext);
             _repositories.Add(typeof(TEntity), repository);

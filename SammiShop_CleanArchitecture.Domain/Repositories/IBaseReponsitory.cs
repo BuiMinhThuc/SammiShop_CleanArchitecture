@@ -3,7 +3,7 @@ using System.Linq.Expressions;
 
 namespace SammiShop_CleanArchitecture.Infrastructure.UnitOfWork.Repositories
 {
-    public interface IBaseReponsetory<TEntity>
+    public interface IBaseReponsitory<TEntity>
          where TEntity : class
     {
         Task<TEntity> CreateAsync(TEntity entity);

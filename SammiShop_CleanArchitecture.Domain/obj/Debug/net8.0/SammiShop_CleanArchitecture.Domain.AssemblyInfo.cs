@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SammiShop_CleanArchitecture.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cf06cc5075d4d4d523173bbce429fa1a8e0c0ef1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c1f131867d3b121901803d254fa611dee88bb2c3")]
 [assembly: System.Reflection.AssemblyProductAttribute("SammiShop_CleanArchitecture.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SammiShop_CleanArchitecture.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

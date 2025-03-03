@@ -1,8 +1,11 @@
-﻿using SammiShop_CleanArchitecture.Application.Interfaces;
+﻿using Microsoft.AspNetCore.Http;
+using SammiShop_CleanArchitecture.Application.Interfaces;
 using SammiShop_CleanArchitecture.Application.Payload.DTOs;
 using SammiShop_CleanArchitecture.Application.Payload.Requests.CardRequest;
+using SammiShop_CleanArchitecture.Application.Payload.Responsi;
 using SammiShop_CleanArchitecture.Domain.Entities;
 using SammiShop_CleanArchitecture.Domain.Extensions;
+using SammiShop_CleanArchitecture.Persistence.Constants;
 using SammiShop_CleanArchitecture.Persistence.Payload.Mappers;
 
 namespace SammiShop_CleanArchitecture.Persistence.Services
@@ -11,17 +14,20 @@ namespace SammiShop_CleanArchitecture.Persistence.Services
     {
         private readonly IBaseService<Card> _baseCardService;
         private readonly IBaseService<Product> _baseProductService;
+        private readonly ResponseObject<CardDTO> _responseCard;
 
         public CardService(IBaseService<Card> baseCardService,
-            IBaseService<Product> baseProductService)
+            IBaseService<Product> baseProductService,
+            ResponseObject<CardDTO> responseCard)
         {
             _baseCardService = baseCardService;
             _baseProductService = baseProductService;
+            _responseCard = responseCard;
         }
-        public async Task<CardDTO> AddAsync(Guid userId, CreateCardRequest request)
+        public async Task<ResponseObject<CardDTO>> AddAsync(Guid userId, CreateCardRequest request)
         {
             if (await InValid(request.ProductId, request.Quantity))
-                return null;
+                return _responseCard.Error(StatusCodes.Status400BadRequest, CardConstant.ADD_PRODUCT_IN_CARD_FAIL, null);
 
             var card = await _baseCardService.GetAsync(x => x.ProductId == request.ProductId
                                              && x.UserId == userId);
@@ -30,24 +36,24 @@ namespace SammiShop_CleanArchitecture.Persistence.Services
             {
                 card.Quantity += request.Quantity;
                 card = await _baseCardService.UpdateAsync(card);
-                return card.EntityToDTO();
+                return _responseCard.Success(CardConstant.ADD_PRODUCT_IN_CARD_SUCCESS, card.EntityToDTO());
             }
             else
             {
                 var cardFromRequest = CreateCardFromRequest(userId, request);
                 card = await _baseCardService.CreateAsync(cardFromRequest);
-                return card.EntityToDTO();
+                return _responseCard.Success(CardConstant.ADD_PRODUCT_IN_CARD_SUCCESS, card.EntityToDTO());
             }
         }
 
-        public async Task<CardDTO> DeleteByIdAsync(Guid cardId)
+        public async Task<ResponseObject<CardDTO>> DeleteByIdAsync(Guid cardId)
         {
             var card = await _baseCardService.GetByIdAsync(cardId);
             if (card == null)
-                return null;
+                return _responseCard.Error(StatusCodes.Status400BadRequest, CardConstant.NOT_FOUND_CARD, null);
 
             await _baseCardService.DeleteAsync(card);
-            return card.EntityToDTO();
+            return _responseCard.Success(CardConstant.DELETE_PRODUCT_IN_CARD_SUCCESS, card.EntityToDTO());
         }
 
         public async Task<IQueryable<CardDTO>> GetAllAsync(PaginationExtension pagination)
@@ -75,22 +81,22 @@ namespace SammiShop_CleanArchitecture.Persistence.Services
 
         }
 
-        public async Task<CardDTO> UpdateAsync(UpdateCardRequest request)
+        public async Task<ResponseObject<CardDTO>> UpdateAsync(UpdateCardRequest request)
         {
             var card = await _baseCardService.GetByIdAsync(request.Id);
             if (card == null)
-                return null;
+                return _responseCard.Error(StatusCodes.Status400BadRequest, CardConstant.NOT_FOUND_CARD, null);
 
 
             if (await InValid(request.ProductId, request.Quantity))
-                return null;
+                return _responseCard.Error(StatusCodes.Status400BadRequest, CardConstant.ADD_PRODUCT_IN_CARD_FAIL, null);
 
             card.Quantity = request.Quantity;
             card.ProductId = request.ProductId;
 
             var result = await _baseCardService.UpdateAsync(card);
 
-            return result.EntityToDTO();
+            return _responseCard.Success(CardConstant.UPDATE_PRODUCT_IN_CARD_SUCCESS, card.EntityToDTO());
 
         }
 

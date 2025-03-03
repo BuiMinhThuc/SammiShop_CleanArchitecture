@@ -9,7 +9,6 @@ namespace SammiShop_CleanArchitecture.Domain.Extensions
         public int PageSize { get; set; } = ConstantDomain.MIN_PAGESIZE_LENGTH;
 
         private int _pageNumber = ConstantDomain.MIN_PAGENUMBER_LENGTH;
-
         public int PageNumber
         {
             get { return _pageNumber; }

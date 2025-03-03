@@ -5,7 +5,6 @@ namespace SammiShop_CleanArchitecture.Persistence.Payload.Mappers
 {
     public static class ProductConverter
     {
-
         public static ProductDTO EntityToDTO(this Product entity)
         {
             return new ProductDTO

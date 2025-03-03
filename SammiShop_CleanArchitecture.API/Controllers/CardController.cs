@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using SammiShop_CleanArchitecture.Application.Interfaces;
 using SammiShop_CleanArchitecture.Application.Payload.Requests.CardRequest;
 using SammiShop_CleanArchitecture.Domain.Extensions;
+using SammiShop_CleanArchitecture.Persistence.Constants;
 
 namespace SammiShop_CleanArchitecture.API.Controllers
 {
@@ -22,7 +23,7 @@ namespace SammiShop_CleanArchitecture.API.Controllers
         {
             var result = await _cardService.GetByIdAsync(Id);
             if (result == null)
-                return BadRequest();
+                return BadRequest(CardConstant.NOT_FOUND_CARD);
 
             return Ok(result);
         }
@@ -32,7 +33,7 @@ namespace SammiShop_CleanArchitecture.API.Controllers
         {
             var result = await _cardService.GetAllAsync(pagination);
             if (result == null)
-                return BadRequest();
+                return BadRequest(CardConstant.LIST_PRODUCT_NULL);
 
             return Ok(result);
         }
@@ -44,7 +45,7 @@ namespace SammiShop_CleanArchitecture.API.Controllers
             Guid userId = Guid.Parse(HttpContext.User.FindFirst("Id").Value);
             var result = await _cardService.GetByUserIdAsync(userId);
             if (result == null)
-                return BadRequest();
+                return BadRequest(CardConstant.LIST_CARD_BY_USERID_NULL);
 
             return Ok(result);
         }
@@ -55,9 +56,8 @@ namespace SammiShop_CleanArchitecture.API.Controllers
         public async Task<IActionResult> AddAsync(CreateCardRequest request)
         {
             Guid userId = Guid.Parse(HttpContext.User.FindFirst("Id").Value);
+
             var result = await _cardService.AddAsync(userId, request);
-            if (result == null)
-                return BadRequest();
 
             return Ok(result);
         }
@@ -67,8 +67,6 @@ namespace SammiShop_CleanArchitecture.API.Controllers
         public async Task<IActionResult> UpdateAsync(UpdateCardRequest request)
         {
             var result = await _cardService.UpdateAsync(request);
-            if (result == null)
-                return BadRequest();
 
             return Ok(result);
         }
@@ -78,8 +76,6 @@ namespace SammiShop_CleanArchitecture.API.Controllers
         public async Task<IActionResult> DeleteAsync(Guid cardId)
         {
             var result = await _cardService.DeleteByIdAsync(cardId);
-            if (result == null)
-                return BadRequest();
 
             return Ok(result);
         }

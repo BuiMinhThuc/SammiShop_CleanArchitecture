@@ -6,6 +6,5 @@
         public string TrademarkName { get; set; }
         public string Address { get; set; }
 
-
     }
 }

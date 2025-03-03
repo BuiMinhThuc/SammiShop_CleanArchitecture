@@ -43,7 +43,6 @@ namespace SammiShop_CleanArchitecture.Persistence.Services
             _cloudinaryService = cloudinaryService;
         }
 
-
         public async Task<UserDTO> CreateAsync(RegisterRequest request)
         {
             if (!ValidateUserInput(request))

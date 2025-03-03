@@ -82,71 +82,37 @@ namespace SammiShop_CleanArchitecture.Persistence.Services
 
         public async Task<IQueryable<TEntity>> GetAllAsync(PaginationExtension pagination, Expression<Func<TEntity, bool>> expresion = null)
         {
-            await _uow.BeginTransactionAsync();
-            try
-            {
-                var result = expresion == null
-                    ? await _uow.GetGenericReponsitory<TEntity>().GetAllAsync(pagination)
-                    : await _uow.GetGenericReponsitory<TEntity>().GetAllAsync(pagination, expresion);
-                await _uow.CommitTransactionAsync();
-                return await PaginationService<TEntity>.Pagination(result, pagination);
-            }
-            catch (Exception ex)
-            {
-                await _uow.RollbackTransactionAsync();
-                throw;
-            }
+
+            var result = expresion == null
+                ? await _uow.GetGenericReponsitory<TEntity>().GetAllAsync(pagination)
+                : await _uow.GetGenericReponsitory<TEntity>().GetAllAsync(pagination, expresion);
+            await _uow.CommitTransactionAsync();
+            return await PaginationService<TEntity>.Pagination(result, pagination);
+
         }
 
         public async Task<IQueryable<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>> expression = null)
         {
 
-            await _uow.BeginTransactionAsync();
-            try
-            {
-                var result = expression == null
-                    ? await _uow.GetGenericReponsitory<TEntity>().GetAllAsync()
-                    : await _uow.GetGenericReponsitory<TEntity>().GetAllAsync(expression);
-                await _uow.CommitTransactionAsync();
-                return result;
-            }
-            catch (Exception ex)
-            {
-                await _uow.RollbackTransactionAsync();
-                throw;
-            }
+            var result = expression == null
+                ? await _uow.GetGenericReponsitory<TEntity>().GetAllAsync()
+                : await _uow.GetGenericReponsitory<TEntity>().GetAllAsync(expression);
+
+            return result;
         }
 
         public async Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> expression)
         {
-            await _uow.BeginTransactionAsync();
-            try
-            {
-                var result = await _uow.GetGenericReponsitory<TEntity>().GetAsync(expression);
-                await _uow.CommitTransactionAsync();
-                return result;
-            }
-            catch (Exception ex)
-            {
-                await _uow.RollbackTransactionAsync();
-                throw;
-            }
+
+            var result = await _uow.GetGenericReponsitory<TEntity>().GetAsync(expression);
+            await _uow.CommitTransactionAsync();
+            return result;
+
         }
 
         public async Task<TEntity> GetByIdAsync(Guid id)
         {
-            await _uow.BeginTransactionAsync();
-            try
-            {
-                var result = await _uow.GetGenericReponsitory<TEntity>().GetByIdAsync(id);
-                await _uow.CommitTransactionAsync();
-                return result;
-            }
-            catch (Exception ex)
-            {
-                await _uow.RollbackTransactionAsync();
-                throw;
-            }
+            return await _uow.GetGenericReponsitory<TEntity>().GetByIdAsync(id);
         }
 
         public async Task<TEntity> UpdateAsync(TEntity entity)

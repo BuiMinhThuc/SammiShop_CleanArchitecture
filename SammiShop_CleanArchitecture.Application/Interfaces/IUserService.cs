@@ -15,7 +15,6 @@ namespace SammiShop_CleanArchitecture.Application.Interfaces
         Task<UserDTO> UpdateByAdmin(UpdateUserByAdminRequest entity);
         Task<Token> LoginAsync(LoginRequest request);
         Task<Token> RenewTokenAsync(Token request);
-
         Task<string> CheckOTP(string otp);
 
     }

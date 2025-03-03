@@ -14,7 +14,6 @@ namespace SammiShop_CleanArchitecture.Persistence.Payload.Mappers
 
             };
         }
-
         public static RoleDTO EntityToDTO(this Role role)
         {
             return new RoleDTO

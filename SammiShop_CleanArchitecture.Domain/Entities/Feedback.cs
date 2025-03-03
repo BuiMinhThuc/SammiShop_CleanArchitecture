@@ -7,6 +7,5 @@
         public int Star { set; get; }
         public virtual User? User { set; get; }
 
-
     }
 }

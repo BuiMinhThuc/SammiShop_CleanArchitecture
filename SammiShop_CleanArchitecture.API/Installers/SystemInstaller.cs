@@ -4,6 +4,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using SammiShop_CleanArchitecture.Application.Interfaces;
 using SammiShop_CleanArchitecture.Application.Payload.DTOs;
+using SammiShop_CleanArchitecture.Application.Payload.Responsi;
 using SammiShop_CleanArchitecture.Domain.Entities;
 using SammiShop_CleanArchitecture.Infrastructure.Cloudinary;
 using SammiShop_CleanArchitecture.Infrastructure.Data;
@@ -82,7 +83,6 @@ namespace SammiShop_CleanArchitecture.API.Installers
             services.AddScoped<ICloudinaryService, CloudinaryService>();
 
 
-
             services.AddAutoMapper(typeof(MappingProfile<ProductType, ProductTypeDTO>).Assembly);
 
 
@@ -103,6 +103,8 @@ namespace SammiShop_CleanArchitecture.API.Installers
             services.AddScoped<IBaseService<Trademark>, BaseService<Trademark>>();
             services.AddScoped<IBaseService<User>, BaseService<User>>();
             services.AddScoped<IBaseService<Card>, BaseService<Card>>();
+
+            services.AddScoped<ResponseObject<CardDTO>>();
 
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();

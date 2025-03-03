@@ -5,10 +5,8 @@ using System.Linq.Expressions;
 
 namespace SammiShop_CleanArchitecture.Infrastructure.UnitOfWork.Repositories
 {
-    public class BaseRepository<TEntity> : IBaseReponsetory<TEntity>
+    public class BaseRepository<TEntity> : IBaseReponsitory<TEntity>
         where TEntity : class
-
-
     {
 
         public DbContext DbContext { get; set; }
@@ -54,13 +52,12 @@ namespace SammiShop_CleanArchitecture.Infrastructure.UnitOfWork.Repositories
 
             return Task.FromResult(query);
         }
-        public async Task<IQueryable<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>> expression = null)
+        public Task<IQueryable<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>> expression = null)
         {
             var query = expression == null
                 ? DbSet.AsQueryable()
                 : DbSet.Where(expression).AsQueryable();
-
-            return query;
+            return Task.FromResult(query);
         }
 
         public async Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> expresion)
@@ -68,10 +65,10 @@ namespace SammiShop_CleanArchitecture.Infrastructure.UnitOfWork.Repositories
             return await DbSet.FirstOrDefaultAsync(expresion);
         }
 
-        public async Task<TEntity> UpdateAsync(TEntity entity)
+        public Task<TEntity> UpdateAsync(TEntity entity)
         {
-            DbSet.UpdateRange(entity);
-            return entity;
+            DbSet.Update(entity);
+            return Task.FromResult(entity);
         }
 
         public async Task<TEntity> DeleteByIdAsync(Guid id)
@@ -93,6 +90,11 @@ namespace SammiShop_CleanArchitecture.Infrastructure.UnitOfWork.Repositories
             DbSet.Remove(entity);
             return Task.FromResult(entity);
         }
+        public IQueryable<TEntity> Include<TProperty>(
+                    IQueryable<TEntity> query,
+                    Expression<Func<TEntity, TProperty>> navigationProperty)
+        {
+            return query.Include(navigationProperty);
+        }
     }
-
 }

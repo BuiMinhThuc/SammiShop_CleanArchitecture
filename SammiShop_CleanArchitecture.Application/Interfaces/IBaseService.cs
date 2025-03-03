@@ -2,7 +2,7 @@
 
 namespace SammiShop_CleanArchitecture.Application.Interfaces
 {
-    public interface IBaseService<TEntity> : IBaseReponsetory<TEntity>
+    public interface IBaseService<TEntity> : IBaseReponsitory<TEntity>
         where TEntity : class
     {
 

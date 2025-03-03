@@ -2,7 +2,6 @@
 {
     public class CreateProductRequest
     {
-
         public string NameProduct { get; set; }
         public string Description { get; set; }
         public string UrlImg { get; set; }
