@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using SammiShop_CleanArchitecture.API.Constants;
+
 using SammiShop_CleanArchitecture.Application.Interfaces;
 using SammiShop_CleanArchitecture.Application.Payload.Requests.ProductTypeRequest;
 using SammiShop_CleanArchitecture.Domain.Extensions;
+using SammiShop_CleanArchitecture.Persistence.Constants;
 
 
 
@@ -55,10 +56,8 @@ namespace SammiShop_CleanArchitecture.API.Controllers
         public async Task<IActionResult> CreateAsync(CreateProductTypeRequest productTypeRequest)
         {
             var result = await _productTypeService.CreateAsync(productTypeRequest);
-            if (result == null)
-                return BadRequest(ProductTypeConstant.CREATE_PRODUCTTYPE_FAIL);
 
-            return CreatedAtRoute(nameof(GetProductTypeByIdAsync), new { id = result.Id }, result);
+            return Ok(result);
         }
 
         [HttpPut("{id}")]
@@ -67,10 +66,8 @@ namespace SammiShop_CleanArchitecture.API.Controllers
         public async Task<IActionResult> UpdateByIdAsync(UpdateProductTypeRequest productTypeRequest)
         {
             var result = await _productTypeService.UpdateAsync(productTypeRequest);
-            if (result == null)
-                return NotFound(ProductTypeConstant.NOT_FOUND_PRODUCTTYPE);
 
-            return NoContent();
+            return Ok(result);
         }
 
         [HttpDelete("{id}")]
@@ -79,10 +76,8 @@ namespace SammiShop_CleanArchitecture.API.Controllers
         public async Task<IActionResult> DeleteById(Guid id)
         {
             var result = await _productTypeService.DeleteByIdAsync(id);
-            if (result is null)
-                return NotFound(ProductTypeConstant.NOT_FOUND_PRODUCTTYPE);
 
-            return NoContent();
+            return Ok(result);
         }
 
 

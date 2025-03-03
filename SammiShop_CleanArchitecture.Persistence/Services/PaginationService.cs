@@ -4,7 +4,7 @@ namespace SammiShop_CleanArchitecture.Persistence.Services
 {
     public static class PaginationService<TEntity>
     {
-        public static async Task<IQueryable<TEntity>> Pagination(IQueryable<TEntity> query, PaginationExtension pageRequest)
+        public static async Task<IEnumerable<TEntity>> Pagination(IEnumerable<TEntity> query, PaginationExtension pageRequest)
         {
             if (pageRequest.PageSize == 0)
                 return query;

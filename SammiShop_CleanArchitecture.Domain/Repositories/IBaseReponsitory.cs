@@ -13,7 +13,7 @@ namespace SammiShop_CleanArchitecture.Infrastructure.UnitOfWork.Repositories
         Task<TEntity> DeleteAsync(TEntity entity);
         Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> expresion);
         Task<TEntity> GetByIdAsync(Guid id);
-        Task<IQueryable<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>> expression = null);
-        Task<IQueryable<TEntity>> GetAllAsync(PaginationExtension pagination, Expression<Func<TEntity, bool>> expresion = null);
+        Task<IEnumerable<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>> expression = null);
+        Task<IEnumerable<TEntity>> GetAllAsync(PaginationExtension pagination, Expression<Func<TEntity, bool>> expresion = null);
     }
 }

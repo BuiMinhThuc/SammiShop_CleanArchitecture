@@ -2,10 +2,11 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using SammiShop_CleanArchitecture.API.Constants;
+
 using SammiShop_CleanArchitecture.Application.Interfaces;
 using SammiShop_CleanArchitecture.Application.Payload.Requests.UserRequest;
 using SammiShop_CleanArchitecture.Domain.Extensions;
+using SammiShop_CleanArchitecture.Persistence.Constants;
 using SammiShop_CleanArchitecture.Persistence.Domain;
 
 namespace SammiShop_CleanArchitecture.API.Controllers
@@ -47,20 +48,16 @@ namespace SammiShop_CleanArchitecture.API.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateAsync(RegisterRequest request)
         {
-            var createdUser = await _userService.CreateAsync(request);
-            if (createdUser == null)
-                return BadRequest(UserConstant.CREATE_USER_FAIL);
+            var result = await _userService.CreateAsync(request);
 
-            return CreatedAtRoute(nameof(GetUserByIdAsync), new { id = createdUser.Id }, createdUser);
+            return Ok(result);
         }
         [HttpPut("users/member/{id}")]
         public async Task<IActionResult> UpdateByMemberAsync(UpdateUserByMemberRequest request)
         {
-            if (await _userService.GetByIdAsync(request.Id) == null)
-                return NotFound(UserConstant.NOT_FOUND_USER);
+            var result = await _userService.UpdateByMember(request);
 
-            await _userService.UpdateByMember(request);
-            return Ok(UserConstant.UPDATE_USER_SUCCESS);
+            return Ok(result);
         }
 
         [HttpPut("admin/{id}")]
@@ -68,11 +65,9 @@ namespace SammiShop_CleanArchitecture.API.Controllers
         [Authorize(Roles = RoleConstant.ROLE_ADMIN)]
         public async Task<IActionResult> UpdateByAdminAsync(UpdateUserByAdminRequest request)
         {
-            if (await _userService.GetByIdAsync(request.Id) == null)
-                return NotFound(UserConstant.NOT_FOUND_USER);
+            var result = await _userService.UpdateByAdmin(request);
 
-            await _userService.UpdateByAdmin(request);
-            return Ok(UserConstant.UPDATE_USER_SUCCESS);
+            return Ok(result);
         }
 
 
@@ -80,8 +75,6 @@ namespace SammiShop_CleanArchitecture.API.Controllers
         public async Task<IActionResult> LoginAsync(LoginRequest request)
         {
             var result = await _userService.LoginAsync(request);
-            if (result == null)
-                return BadRequest(UserConstant.LOGIN_FAIL);
 
             return Ok(result);
         }

@@ -10,7 +10,7 @@ namespace SammiShop_CleanArchitecture.Application.Interfaces
         Task<ResponseObject<CardDTO>> AddAsync(Guid userId, CreateCardRequest request);
         Task<ResponseObject<CardDTO>> UpdateAsync(UpdateCardRequest request);
         Task<ResponseObject<CardDTO>> DeleteByIdAsync(Guid cardId);
-        Task<IQueryable<CardDTO>> GetAllAsync(PaginationExtension pagination);
+        Task<IEnumerable<CardDTO>> GetAllAsync(PaginationExtension pagination);
         Task<CardDTO> GetByIdAsync(Guid cardId);
         Task<IEnumerable<CardDTO>> GetByUserIdAsync(Guid userId);
     }

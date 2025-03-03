@@ -44,20 +44,20 @@ namespace SammiShop_CleanArchitecture.Infrastructure.UnitOfWork.Repositories
             return entities;
 
         }
-        public Task<IQueryable<TEntity>> GetAllAsync(PaginationExtension pagination, Expression<Func<TEntity, bool>> expression = null)
+        public async Task<IEnumerable<TEntity>> GetAllAsync(PaginationExtension pagination, Expression<Func<TEntity, bool>> expression = null)
         {
             var query = expression == null
                 ? DbSet.AsQueryable()
                 : DbSet.Where(expression).AsQueryable();
 
-            return Task.FromResult(query);
+            return query;
         }
-        public Task<IQueryable<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>> expression = null)
+        public async Task<IEnumerable<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>> expression = null)
         {
             var query = expression == null
                 ? DbSet.AsQueryable()
                 : DbSet.Where(expression).AsQueryable();
-            return Task.FromResult(query);
+            return query;
         }
 
         public async Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> expresion)
@@ -96,5 +96,8 @@ namespace SammiShop_CleanArchitecture.Infrastructure.UnitOfWork.Repositories
         {
             return query.Include(navigationProperty);
         }
+
+
+
     }
 }

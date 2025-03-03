@@ -26,24 +26,20 @@ namespace SammiShop_CleanArchitecture.Persistence.Services
         }
         public async Task<ResponseObject<CardDTO>> AddAsync(Guid userId, CreateCardRequest request)
         {
-            if (await InValid(request.ProductId, request.Quantity))
-                return _responseCard.Error(StatusCodes.Status400BadRequest, CardConstant.ADD_PRODUCT_IN_CARD_FAIL, null);
-
-            var card = await _baseCardService.GetAsync(x => x.ProductId == request.ProductId
-                                             && x.UserId == userId);
-
+            var card = await _baseCardService.GetAsync(card => card.ProductId == request.ProductId
+                                             && card.UserId == userId);
             if (card != null)
             {
                 card.Quantity += request.Quantity;
                 card = await _baseCardService.UpdateAsync(card);
-                return _responseCard.Success(CardConstant.ADD_PRODUCT_IN_CARD_SUCCESS, card.EntityToDTO());
             }
             else
             {
                 var cardFromRequest = CreateCardFromRequest(userId, request);
                 card = await _baseCardService.CreateAsync(cardFromRequest);
-                return _responseCard.Success(CardConstant.ADD_PRODUCT_IN_CARD_SUCCESS, card.EntityToDTO());
             }
+
+            return _responseCard.Success(CardConstant.ADD_PRODUCT_IN_CARD_SUCCESS, card.EntityToDTO());
         }
 
         public async Task<ResponseObject<CardDTO>> DeleteByIdAsync(Guid cardId)
@@ -56,7 +52,7 @@ namespace SammiShop_CleanArchitecture.Persistence.Services
             return _responseCard.Success(CardConstant.DELETE_PRODUCT_IN_CARD_SUCCESS, card.EntityToDTO());
         }
 
-        public async Task<IQueryable<CardDTO>> GetAllAsync(PaginationExtension pagination)
+        public async Task<IEnumerable<CardDTO>> GetAllAsync(PaginationExtension pagination)
         {
             var cards = await _baseCardService.GetAllAsync(pagination);
             return cards.Select(x => x.EntityToDTO());
@@ -78,26 +74,17 @@ namespace SammiShop_CleanArchitecture.Persistence.Services
                 return null;
 
             return cards.Select(x => x.EntityToDTO());
-
         }
 
         public async Task<ResponseObject<CardDTO>> UpdateAsync(UpdateCardRequest request)
         {
-            var card = await _baseCardService.GetByIdAsync(request.Id);
+            var card = await SetCardFromRequest(request);
             if (card == null)
                 return _responseCard.Error(StatusCodes.Status400BadRequest, CardConstant.NOT_FOUND_CARD, null);
-
-
-            if (await InValid(request.ProductId, request.Quantity))
-                return _responseCard.Error(StatusCodes.Status400BadRequest, CardConstant.ADD_PRODUCT_IN_CARD_FAIL, null);
-
-            card.Quantity = request.Quantity;
-            card.ProductId = request.ProductId;
 
             var result = await _baseCardService.UpdateAsync(card);
 
             return _responseCard.Success(CardConstant.UPDATE_PRODUCT_IN_CARD_SUCCESS, card.EntityToDTO());
-
         }
 
         #region SUPPORT
@@ -111,11 +98,17 @@ namespace SammiShop_CleanArchitecture.Persistence.Services
                 Quantity = request.Quantity,
             };
         }
+        private async Task<Card> SetCardFromRequest(UpdateCardRequest request)
+        {
+            var card = await _baseCardService.GetByIdAsync(request.Id);
+            if (card == null)
+                return null;
 
-        private async Task<bool> InValid(Guid productId, int quantity)
-            => await _baseProductService.GetAsync(x => x.Id == productId
-                                                    && x.Quantity >= quantity)
-                                                        is null;
+            card.Quantity = request.Quantity;
+            card.ProductId = request.ProductId;
+
+            return card;
+        }
         #endregion
     }
 }

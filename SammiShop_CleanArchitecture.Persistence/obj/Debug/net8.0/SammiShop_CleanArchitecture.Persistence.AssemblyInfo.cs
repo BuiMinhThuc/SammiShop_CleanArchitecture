@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SammiShop_CleanArchitecture.Persistence")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c1f131867d3b121901803d254fa611dee88bb2c3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cec9b228b7c59fa0101633dc93b22f2473e9c038")]
 [assembly: System.Reflection.AssemblyProductAttribute("SammiShop_CleanArchitecture.Persistence")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SammiShop_CleanArchitecture.Persistence")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -6,13 +6,15 @@
 
         public const string MEMBER_ID = "4a1d6151-c03d-4fd4-88ed-485bdbbcb12b";
 
-        public const int EXPIRED_TIME_TOKEN = 1;
+        public const int EXPIRED_TIME_TOKEN = 24;
 
         public const int EXPIRED_TIME_OTP_EMAIL = 5;
 
-        public const int EXPIRED_TIME_REFRESHTOKEN = 10;
+        public const int EXPIRED_TIME_REFRESHTOKEN = 240;
 
         public const string INVALID_TOKEN = "Token không hợp lệ";
+
+        public const string GET_TOKEN_SUCCESS = "Tạo token thành công !";
 
         public const string NOT_FOUND_TOKEN = "RefreshToken không tồn tại trong database";
 

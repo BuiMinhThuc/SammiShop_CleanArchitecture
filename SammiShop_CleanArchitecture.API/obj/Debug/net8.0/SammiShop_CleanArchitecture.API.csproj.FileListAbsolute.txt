@@ -179,7 +179,6 @@ C:\Users\buimi\Documents\CODE\C#\Tự Học\SammiShop_CleanArchitecture\SammiSho
 C:\Users\buimi\Documents\CODE\C#\Tự Học\SammiShop_CleanArchitecture\SammiShop_CleanArchitecture.API\obj\Debug\net8.0\SammiShop_CleanArchitecture.API.pdb
 C:\Users\buimi\Documents\CODE\C#\Tự Học\SammiShop_CleanArchitecture\SammiShop_CleanArchitecture.API\obj\Debug\net8.0\SammiShop_CleanArchitecture.API.genruntimeconfig.cache
 C:\Users\buimi\Documents\CODE\C#\Tự Học\SammiShop_CleanArchitecture\SammiShop_CleanArchitecture.API\obj\Debug\net8.0\ref\SammiShop_CleanArchitecture.API.dll
-C:\Users\buimi\Documents\CODE\C#\Tự Học\SammiShop_CleanArchitecture\SammiShop_CleanArchitecture.API\obj\Debug\net8.0\SammiShop_CleanArchitecture.API.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\buimi\Documents\CODE\C#\Tự Học\SammiShop_CleanArchitecture\SammiShop_CleanArchitecture.API\bin\Debug\net8.0\BCrypt.Net-Next.dll
 C:\Users\buimi\Documents\CODE\C#\Tự Học\SammiShop_CleanArchitecture\SammiShop_CleanArchitecture.API\bin\Debug\net8.0\Microsoft.Bcl.Memory.dll
 C:\Users\buimi\Documents\CODE\C#\Tự Học\SammiShop_CleanArchitecture\SammiShop_CleanArchitecture.API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

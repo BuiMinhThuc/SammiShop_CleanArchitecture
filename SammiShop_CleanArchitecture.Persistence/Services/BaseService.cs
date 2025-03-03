@@ -80,18 +80,18 @@ namespace SammiShop_CleanArchitecture.Persistence.Services
             }
         }
 
-        public async Task<IQueryable<TEntity>> GetAllAsync(PaginationExtension pagination, Expression<Func<TEntity, bool>> expresion = null)
+        public async Task<IEnumerable<TEntity>> GetAllAsync(PaginationExtension pagination, Expression<Func<TEntity, bool>> expresion = null)
         {
 
             var result = expresion == null
                 ? await _uow.GetGenericReponsitory<TEntity>().GetAllAsync(pagination)
                 : await _uow.GetGenericReponsitory<TEntity>().GetAllAsync(pagination, expresion);
-            await _uow.CommitTransactionAsync();
+
             return await PaginationService<TEntity>.Pagination(result, pagination);
 
         }
 
-        public async Task<IQueryable<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>> expression = null)
+        public async Task<IEnumerable<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>> expression = null)
         {
 
             var result = expression == null
@@ -103,11 +103,8 @@ namespace SammiShop_CleanArchitecture.Persistence.Services
 
         public async Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> expression)
         {
-
             var result = await _uow.GetGenericReponsitory<TEntity>().GetAsync(expression);
-            await _uow.CommitTransactionAsync();
             return result;
-
         }
 
         public async Task<TEntity> GetByIdAsync(Guid id)

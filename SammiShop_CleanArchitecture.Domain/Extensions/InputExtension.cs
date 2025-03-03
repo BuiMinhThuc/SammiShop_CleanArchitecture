@@ -69,7 +69,6 @@ namespace SammiShop_CleanArchitecture.Domain.Extensions
             });
         }
 
-        // TODO: Check if the image is valid
         public static bool IsImage(IFormFile imageFile)
         {
             int maxSizeInBytes = (2 * 1024 * 768);

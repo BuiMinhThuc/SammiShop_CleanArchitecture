@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using SammiShop_CleanArchitecture.API.Constants;
+
 using SammiShop_CleanArchitecture.Application.Interfaces;
 using SammiShop_CleanArchitecture.Application.Payload.Requests.TrademarkRequest;
 using SammiShop_CleanArchitecture.Domain.Extensions;
+using SammiShop_CleanArchitecture.Persistence.Constants;
 
 namespace SammiShop_CleanArchitecture.API.Controllers
 {
@@ -46,10 +47,8 @@ namespace SammiShop_CleanArchitecture.API.Controllers
         public async Task<IActionResult> CreateAsync(CreateTrademarkRequest trademarkRequest)
         {
             var result = await _trademarkService.CreateAsync(trademarkRequest);
-            if (result == null)
-                return BadRequest(TrademarkConstant.CREATE_TRADEMARK_FAIL);
 
-            return CreatedAtRoute(nameof(GetTrademarkByIdAsync), new { id = result.Id }, result);
+            return Ok(result);
         }
 
         [HttpPut("{id}")]
@@ -58,10 +57,8 @@ namespace SammiShop_CleanArchitecture.API.Controllers
         public async Task<IActionResult> UpdateByIdAsync(UpdateTrademarkRequest entityRequest)
         {
             var result = await _trademarkService.UpdateAsync(entityRequest);
-            if (result == null)
-                return NotFound(TrademarkConstant.NOT_FOUND_TRADEMARK);
 
-            return NoContent();
+            return Ok(result);
         }
 
         [HttpDelete("{id}")]
@@ -70,10 +67,8 @@ namespace SammiShop_CleanArchitecture.API.Controllers
         public async Task<IActionResult> DeleteByIdAsync(Guid id)
         {
             var result = await _trademarkService.DeleteByIdAsync(id);
-            if (result == null)
-                return NotFound(TrademarkConstant.NOT_FOUND_TRADEMARK);
 
-            return NoContent();
+            return Ok(result);
         }
 
 

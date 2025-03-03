@@ -3,36 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\buimi\\Documents\\CODE\\C#\\T\u1EF1 H\u1ECDc\\SammiShop_CleanArchitecture\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{4D0DAF83-BD86-4BE4-BBED-56AD1E0CD888}|SammiShop_CleanArchitecture.Persistence\\SammiShop_CleanArchitecture.Persistence.csproj|c:\\users\\buimi\\documents\\code\\c#\\t\u1EF1 h\u1ECDc\\sammishop_cleanarchitecture\\sammishop_cleanarchitecture.persistence\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D0DAF83-BD86-4BE4-BBED-56AD1E0CD888}|SammiShop_CleanArchitecture.Persistence\\SammiShop_CleanArchitecture.Persistence.csproj|solutionrelative:sammishop_cleanarchitecture.persistence\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F2FDD3-2CE9-4F7E-86CC-B68A6F9959EE}|SammiShop_CleanArchitecture.API\\SammiShop_CleanArchitecture.API.csproj|c:\\users\\buimi\\documents\\code\\c#\\t\u1EF1 h\u1ECDc\\sammishop_cleanarchitecture\\sammishop_cleanarchitecture.api\\installers\\systeminstaller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4F2FDD3-2CE9-4F7E-86CC-B68A6F9959EE}|SammiShop_CleanArchitecture.API\\SammiShop_CleanArchitecture.API.csproj|solutionrelative:sammishop_cleanarchitecture.api\\installers\\systeminstaller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8BB8BE74-7C7A-4ABC-9F6E-A54CD1CAE671}|SammiShop_CleanArchitecture.Infrastructure\\SammiShop_CleanArchitecture.Infrastructure.csproj|c:\\users\\buimi\\documents\\code\\c#\\t\u1EF1 h\u1ECDc\\sammishop_cleanarchitecture\\sammishop_cleanarchitecture.infrastructure\\unitofwork\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8BB8BE74-7C7A-4ABC-9F6E-A54CD1CAE671}|SammiShop_CleanArchitecture.Infrastructure\\SammiShop_CleanArchitecture.Infrastructure.csproj|solutionrelative:sammishop_cleanarchitecture.infrastructure\\unitofwork\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8BB8BE74-7C7A-4ABC-9F6E-A54CD1CAE671}|SammiShop_CleanArchitecture.Infrastructure\\SammiShop_CleanArchitecture.Infrastructure.csproj|c:\\users\\buimi\\documents\\code\\c#\\t\u1EF1 h\u1ECDc\\sammishop_cleanarchitecture\\sammishop_cleanarchitecture.infrastructure\\unitofwork\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8BB8BE74-7C7A-4ABC-9F6E-A54CD1CAE671}|SammiShop_CleanArchitecture.Infrastructure\\SammiShop_CleanArchitecture.Infrastructure.csproj|solutionrelative:sammishop_cleanarchitecture.infrastructure\\unitofwork\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C3B4C0C2-BFDD-420E-81DC-24BA8B8DB923}|SammiShop_CleanArchitecture.Domain\\SammiShop_CleanArchitecture.Domain.csproj|c:\\users\\buimi\\documents\\code\\c#\\t\u1EF1 h\u1ECDc\\sammishop_cleanarchitecture\\sammishop_cleanarchitecture.domain\\repositories\\ibasereponsitory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3B4C0C2-BFDD-420E-81DC-24BA8B8DB923}|SammiShop_CleanArchitecture.Domain\\SammiShop_CleanArchitecture.Domain.csproj|solutionrelative:sammishop_cleanarchitecture.domain\\repositories\\ibasereponsitory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D0DAF83-BD86-4BE4-BBED-56AD1E0CD888}|SammiShop_CleanArchitecture.Persistence\\SammiShop_CleanArchitecture.Persistence.csproj|c:\\users\\buimi\\documents\\code\\c#\\t\u1EF1 h\u1ECDc\\sammishop_cleanarchitecture\\sammishop_cleanarchitecture.persistence\\services\\cardservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D0DAF83-BD86-4BE4-BBED-56AD1E0CD888}|SammiShop_CleanArchitecture.Persistence\\SammiShop_CleanArchitecture.Persistence.csproj|solutionrelative:sammishop_cleanarchitecture.persistence\\services\\cardservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4D0DAF83-BD86-4BE4-BBED-56AD1E0CD888}|SammiShop_CleanArchitecture.Persistence\\SammiShop_CleanArchitecture.Persistence.csproj|c:\\users\\buimi\\documents\\code\\c#\\t\u1EF1 h\u1ECDc\\sammishop_cleanarchitecture\\sammishop_cleanarchitecture.persistence\\services\\paginationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D0DAF83-BD86-4BE4-BBED-56AD1E0CD888}|SammiShop_CleanArchitecture.Persistence\\SammiShop_CleanArchitecture.Persistence.csproj|solutionrelative:sammishop_cleanarchitecture.persistence\\services\\paginationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4D0DAF83-BD86-4BE4-BBED-56AD1E0CD888}|SammiShop_CleanArchitecture.Persistence\\SammiShop_CleanArchitecture.Persistence.csproj|c:\\users\\buimi\\documents\\code\\c#\\t\u1EF1 h\u1ECDc\\sammishop_cleanarchitecture\\sammishop_cleanarchitecture.persistence\\services\\baseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4D0DAF83-BD86-4BE4-BBED-56AD1E0CD888}|SammiShop_CleanArchitecture.Persistence\\SammiShop_CleanArchitecture.Persistence.csproj|solutionrelative:sammishop_cleanarchitecture.persistence\\services\\baseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D0DAF83-BD86-4BE4-BBED-56AD1E0CD888}|SammiShop_CleanArchitecture.Persistence\\SammiShop_CleanArchitecture.Persistence.csproj|c:\\users\\buimi\\documents\\code\\c#\\t\u1EF1 h\u1ECDc\\sammishop_cleanarchitecture\\sammishop_cleanarchitecture.persistence\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D0DAF83-BD86-4BE4-BBED-56AD1E0CD888}|SammiShop_CleanArchitecture.Persistence\\SammiShop_CleanArchitecture.Persistence.csproj|solutionrelative:sammishop_cleanarchitecture.persistence\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B4F2FDD3-2CE9-4F7E-86CC-B68A6F9959EE}|SammiShop_CleanArchitecture.API\\SammiShop_CleanArchitecture.API.csproj|c:\\users\\buimi\\documents\\code\\c#\\t\u1EF1 h\u1ECDc\\sammishop_cleanarchitecture\\sammishop_cleanarchitecture.api\\controllers\\cardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4F2FDD3-2CE9-4F7E-86CC-B68A6F9959EE}|SammiShop_CleanArchitecture.API\\SammiShop_CleanArchitecture.API.csproj|solutionrelative:sammishop_cleanarchitecture.api\\controllers\\cardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4D0DAF83-BD86-4BE4-BBED-56AD1E0CD888}|SammiShop_CleanArchitecture.Persistence\\SammiShop_CleanArchitecture.Persistence.csproj|c:\\users\\buimi\\documents\\code\\c#\\t\u1EF1 h\u1ECDc\\sammishop_cleanarchitecture\\sammishop_cleanarchitecture.persistence\\constants\\cardconstant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D0DAF83-BD86-4BE4-BBED-56AD1E0CD888}|SammiShop_CleanArchitecture.Persistence\\SammiShop_CleanArchitecture.Persistence.csproj|solutionrelative:sammishop_cleanarchitecture.persistence\\constants\\cardconstant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FBCFCB1E-DD0A-4CA2-80AB-BB63AE6555C1}|SammiShop_CleanArchitecture.Application\\SammiShop_CleanArchitecture.Application.csproj|c:\\users\\buimi\\documents\\code\\c#\\t\u1EF1 h\u1ECDc\\sammishop_cleanarchitecture\\sammishop_cleanarchitecture.application\\interfaces\\icardservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FBCFCB1E-DD0A-4CA2-80AB-BB63AE6555C1}|SammiShop_CleanArchitecture.Application\\SammiShop_CleanArchitecture.Application.csproj|solutionrelative:sammishop_cleanarchitecture.application\\interfaces\\icardservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4D0DAF83-BD86-4BE4-BBED-56AD1E0CD888}|SammiShop_CleanArchitecture.Persistence\\SammiShop_CleanArchitecture.Persistence.csproj|c:\\users\\buimi\\documents\\code\\c#\\t\u1EF1 h\u1ECDc\\sammishop_cleanarchitecture\\sammishop_cleanarchitecture.persistence\\services\\trademarkservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D0DAF83-BD86-4BE4-BBED-56AD1E0CD888}|SammiShop_CleanArchitecture.Persistence\\SammiShop_CleanArchitecture.Persistence.csproj|solutionrelative:sammishop_cleanarchitecture.persistence\\services\\trademarkservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 43,
+          "SelectedChildIndex": 47,
           "Children": [
             {
               "$type": "Bookmark",
@@ -215,105 +211,92 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "UnitOfWork.cs",
-              "DocumentMoniker": "C:\\Users\\buimi\\Documents\\CODE\\C#\\T\u1EF1 H\u1ECDc\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Infrastructure\\UnitOfWork\\UnitOfWork.cs",
-              "RelativeDocumentMoniker": "SammiShop_CleanArchitecture.Infrastructure\\UnitOfWork\\UnitOfWork.cs",
-              "ToolTip": "C:\\Users\\buimi\\Documents\\CODE\\C#\\T\u1EF1 H\u1ECDc\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Infrastructure\\UnitOfWork\\UnitOfWork.cs",
-              "RelativeToolTip": "SammiShop_CleanArchitecture.Infrastructure\\UnitOfWork\\UnitOfWork.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Title": "SystemInstaller.cs",
+              "DocumentMoniker": "C:\\Users\\buimi\\Documents\\CODE\\C#\\T\u1EF1 H\u1ECDc\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.API\\Installers\\SystemInstaller.cs",
+              "RelativeDocumentMoniker": "SammiShop_CleanArchitecture.API\\Installers\\SystemInstaller.cs",
+              "ToolTip": "C:\\Users\\buimi\\Documents\\CODE\\C#\\T\u1EF1 H\u1ECDc\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.API\\Installers\\SystemInstaller.cs",
+              "RelativeToolTip": "SammiShop_CleanArchitecture.API\\Installers\\SystemInstaller.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAQwFUAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-03T02:42:52.084Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "BaseRepository.cs",
-              "DocumentMoniker": "C:\\Users\\buimi\\Documents\\CODE\\C#\\T\u1EF1 H\u1ECDc\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Infrastructure\\UnitOfWork\\BaseRepository.cs",
-              "RelativeDocumentMoniker": "SammiShop_CleanArchitecture.Infrastructure\\UnitOfWork\\BaseRepository.cs",
-              "ToolTip": "C:\\Users\\buimi\\Documents\\CODE\\C#\\T\u1EF1 H\u1ECDc\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Infrastructure\\UnitOfWork\\BaseRepository.cs",
-              "RelativeToolTip": "SammiShop_CleanArchitecture.Infrastructure\\UnitOfWork\\BaseRepository.cs",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAIwFAAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-03T02:23:15.778Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "BaseService.cs",
-              "DocumentMoniker": "C:\\Users\\buimi\\Documents\\CODE\\C#\\T\u1EF1 H\u1ECDc\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Persistence\\Services\\BaseService.cs",
-              "RelativeDocumentMoniker": "SammiShop_CleanArchitecture.Persistence\\Services\\BaseService.cs",
-              "ToolTip": "C:\\Users\\buimi\\Documents\\CODE\\C#\\T\u1EF1 H\u1ECDc\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Persistence\\Services\\BaseService.cs",
-              "RelativeToolTip": "SammiShop_CleanArchitecture.Persistence\\Services\\BaseService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAG0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-03T02:14:51.944Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CardConstant.cs",
-              "DocumentMoniker": "C:\\Users\\buimi\\Documents\\CODE\\C#\\T\u1EF1 H\u1ECDc\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Persistence\\Constants\\CardConstant.cs",
-              "RelativeDocumentMoniker": "SammiShop_CleanArchitecture.Persistence\\Constants\\CardConstant.cs",
-              "ToolTip": "C:\\Users\\buimi\\Documents\\CODE\\C#\\T\u1EF1 H\u1ECDc\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Persistence\\Constants\\CardConstant.cs",
-              "RelativeToolTip": "SammiShop_CleanArchitecture.Persistence\\Constants\\CardConstant.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABTAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-03T01:56:26.503Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ICardService.cs",
-              "DocumentMoniker": "C:\\Users\\buimi\\Documents\\CODE\\C#\\T\u1EF1 H\u1ECDc\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Application\\Interfaces\\ICardService.cs",
-              "RelativeDocumentMoniker": "SammiShop_CleanArchitecture.Application\\Interfaces\\ICardService.cs",
-              "ToolTip": "C:\\Users\\buimi\\Documents\\CODE\\C#\\T\u1EF1 H\u1ECDc\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Application\\Interfaces\\ICardService.cs",
-              "RelativeToolTip": "SammiShop_CleanArchitecture.Application\\Interfaces\\ICardService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-03T01:50:02.038Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CardController.cs",
-              "DocumentMoniker": "C:\\Users\\buimi\\Documents\\CODE\\C#\\T\u1EF1 H\u1ECDc\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.API\\Controllers\\CardController.cs",
-              "RelativeDocumentMoniker": "SammiShop_CleanArchitecture.API\\Controllers\\CardController.cs",
-              "ToolTip": "C:\\Users\\buimi\\Documents\\CODE\\C#\\T\u1EF1 H\u1ECDc\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.API\\Controllers\\CardController.cs",
-              "RelativeToolTip": "SammiShop_CleanArchitecture.API\\Controllers\\CardController.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAAkwE0AAABEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-03T01:44:21.982Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CardService.cs",
-              "DocumentMoniker": "C:\\Users\\buimi\\Documents\\CODE\\C#\\T\u1EF1 H\u1ECDc\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Persistence\\Services\\CardService.cs",
-              "RelativeDocumentMoniker": "SammiShop_CleanArchitecture.Persistence\\Services\\CardService.cs",
-              "ToolTip": "C:\\Users\\buimi\\Documents\\CODE\\C#\\T\u1EF1 H\u1ECDc\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Persistence\\Services\\CardService.cs",
-              "RelativeToolTip": "SammiShop_CleanArchitecture.Persistence\\Services\\CardService.cs",
-              "ViewState": "AgIAAEIAAAAAAAAAAAD4v1kAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-03T01:35:46.614Z",
+              "WhenOpened": "2025-03-03T16:28:41.318Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "PaginationService.cs",
+              "DocumentMoniker": "C:\\Users\\buimi\\Documents\\CODE\\C#\\T\u1EF1 H\u1ECDc\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Persistence\\Services\\PaginationService.cs",
+              "RelativeDocumentMoniker": "SammiShop_CleanArchitecture.Persistence\\Services\\PaginationService.cs",
+              "ToolTip": "C:\\Users\\buimi\\Documents\\CODE\\C#\\T\u1EF1 H\u1ECDc\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Persistence\\Services\\PaginationService.cs",
+              "RelativeToolTip": "SammiShop_CleanArchitecture.Persistence\\Services\\PaginationService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAYAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-03T16:25:11.899Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IBaseReponsitory.cs",
+              "DocumentMoniker": "C:\\Users\\buimi\\Documents\\CODE\\C#\\T\u1EF1 H\u1ECDc\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Domain\\Repositories\\IBaseReponsitory.cs",
+              "RelativeDocumentMoniker": "SammiShop_CleanArchitecture.Domain\\Repositories\\IBaseReponsitory.cs",
+              "ToolTip": "C:\\Users\\buimi\\Documents\\CODE\\C#\\T\u1EF1 H\u1ECDc\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Domain\\Repositories\\IBaseReponsitory.cs",
+              "RelativeToolTip": "SammiShop_CleanArchitecture.Domain\\Repositories\\IBaseReponsitory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA8AAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-03T16:24:34.53Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BaseRepository.cs",
+              "DocumentMoniker": "C:\\Users\\buimi\\Documents\\CODE\\C#\\T\u1EF1 H\u1ECDc\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Infrastructure\\UnitOfWork\\BaseRepository.cs",
+              "RelativeDocumentMoniker": "SammiShop_CleanArchitecture.Infrastructure\\UnitOfWork\\BaseRepository.cs",
+              "ToolTip": "C:\\Users\\buimi\\Documents\\CODE\\C#\\T\u1EF1 H\u1ECDc\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Infrastructure\\UnitOfWork\\BaseRepository.cs",
+              "RelativeToolTip": "SammiShop_CleanArchitecture.Infrastructure\\UnitOfWork\\BaseRepository.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAowDsAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-03T16:24:25.856Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BaseService.cs",
+              "DocumentMoniker": "C:\\Users\\buimi\\Documents\\CODE\\C#\\T\u1EF1 H\u1ECDc\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Persistence\\Services\\BaseService.cs",
+              "RelativeDocumentMoniker": "SammiShop_CleanArchitecture.Persistence\\Services\\BaseService.cs",
+              "ToolTip": "C:\\Users\\buimi\\Documents\\CODE\\C#\\T\u1EF1 H\u1ECDc\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Persistence\\Services\\BaseService.cs",
+              "RelativeToolTip": "SammiShop_CleanArchitecture.Persistence\\Services\\BaseService.cs",
+              "ViewState": "AgIAAEgAAAAAAAAAAAD4v1kAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-03T16:24:11.823Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "UserService.cs",
               "DocumentMoniker": "C:\\Users\\buimi\\Documents\\CODE\\C#\\T\u1EF1 H\u1ECDc\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Persistence\\Services\\UserService.cs",
               "RelativeDocumentMoniker": "SammiShop_CleanArchitecture.Persistence\\Services\\UserService.cs",
               "ToolTip": "C:\\Users\\buimi\\Documents\\CODE\\C#\\T\u1EF1 H\u1ECDc\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Persistence\\Services\\UserService.cs",
               "RelativeToolTip": "SammiShop_CleanArchitecture.Persistence\\Services\\UserService.cs",
-              "ViewState": "AgIAACkBAAAAAAAAAAAUwHwBAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-03T02:05:58.118Z",
+              "WhenOpened": "2025-03-03T16:24:00.402Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TrademarkService.cs",
+              "DocumentMoniker": "C:\\Users\\buimi\\Documents\\CODE\\C#\\T\u1EF1 H\u1ECDc\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Persistence\\Services\\TrademarkService.cs",
+              "RelativeDocumentMoniker": "SammiShop_CleanArchitecture.Persistence\\Services\\TrademarkService.cs",
+              "ToolTip": "C:\\Users\\buimi\\Documents\\CODE\\C#\\T\u1EF1 H\u1ECDc\\SammiShop_CleanArchitecture\\SammiShop_CleanArchitecture.Persistence\\Services\\TrademarkService.cs",
+              "RelativeToolTip": "SammiShop_CleanArchitecture.Persistence\\Services\\TrademarkService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-03T16:23:59.7Z",
               "EditorCaption": ""
             }
           ]

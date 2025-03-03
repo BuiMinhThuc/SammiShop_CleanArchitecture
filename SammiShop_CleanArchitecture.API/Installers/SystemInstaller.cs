@@ -10,6 +10,8 @@ using SammiShop_CleanArchitecture.Infrastructure.Cloudinary;
 using SammiShop_CleanArchitecture.Infrastructure.Data;
 using SammiShop_CleanArchitecture.Infrastructure.EmailTo;
 using SammiShop_CleanArchitecture.Infrastructure.UnitOfWork;
+using SammiShop_CleanArchitecture.Persistence.Domain;
+using SammiShop_CleanArchitecture.Persistence.Extensions;
 using SammiShop_CleanArchitecture.Persistence.Payload.Mappers.AutoMappers;
 using SammiShop_CleanArchitecture.Persistence.Services;
 using SammiShop_CleanArchitecture.Persistence.Services.ProductTyoeService;
@@ -81,6 +83,7 @@ namespace SammiShop_CleanArchitecture.API.Installers
 
             services.AddScoped<IEmailService, EmailService>();
             services.AddScoped<ICloudinaryService, CloudinaryService>();
+            services.AddScoped<IImageService, ImageService>();
 
 
             services.AddAutoMapper(typeof(MappingProfile<ProductType, ProductTypeDTO>).Assembly);
@@ -105,9 +108,14 @@ namespace SammiShop_CleanArchitecture.API.Installers
             services.AddScoped<IBaseService<Card>, BaseService<Card>>();
 
             services.AddScoped<ResponseObject<CardDTO>>();
+            services.AddScoped<ResponseObject<ProductDTO>>();
+            services.AddScoped<ResponseObject<ProductTypeDTO>>();
+            services.AddScoped<ResponseObject<RoleDTO>>();
+            services.AddScoped<ResponseObject<TrademarkDTO>>();
+            services.AddScoped<ResponseObject<UserDTO>>();
+            services.AddScoped<ResponseObject<Token>>();
 
             services.AddEndpointsApiExplorer();
-            services.AddSwaggerGen();
 
         }
     }

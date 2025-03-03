@@ -1,4 +1,4 @@
-﻿namespace SammiShop_CleanArchitecture.API.Constants
+﻿namespace SammiShop_CleanArchitecture.Persistence.Constants
 {
     public class UserConstant
     {
@@ -15,5 +15,9 @@
         public const string DELETE_USER_SUCCESS = "Xóa tài khoản thành công !";
 
         public const string LOGIN_FAIL = "Có vấn đề với tài khoản !";
+
+        public const string DATA_REQUEST_INVALID = "Đầu vào không hợp lệ !";
+
+        public const string USERNAME_ISEXIST = "Đầu vào không hợp lệ !";
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace SammiShop_CleanArchitecture.API.Constants
+﻿namespace SammiShop_CleanArchitecture.Persistence.Constants
 {
     public static class ProductTypeConstant
     {

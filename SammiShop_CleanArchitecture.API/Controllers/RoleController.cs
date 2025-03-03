@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using SammiShop_CleanArchitecture.API.Constants;
+
 using SammiShop_CleanArchitecture.Application.Interfaces;
 using SammiShop_CleanArchitecture.Application.Payload.Requests.RoleRequest;
 using SammiShop_CleanArchitecture.Domain.Extensions;
+using SammiShop_CleanArchitecture.Persistence.Constants;
 
 namespace SammiShop_CleanArchitecture.API.Controllers
 {
@@ -48,21 +49,18 @@ namespace SammiShop_CleanArchitecture.API.Controllers
         public async Task<IActionResult> CreateAsync(CreateRoleRequest roleRequest)
         {
             var result = await _roleService.CreateAsync(roleRequest);
-            if (result == null)
-                return BadRequest(RoleConstant.CREATE_ROLE_FAIL);
 
-            return CreatedAtRoute(nameof(GetRoleByIdAsync), new { id = result.Id }, result);
+            return Ok(result);
         }
+
         [HttpPut("{id}")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [Authorize(Roles = RoleConstant.ROLE_ADMIN)]
         public async Task<IActionResult> UpdateAsync(UpdateRoleRequest roleRequest)
         {
             var result = await _roleService.UpdateAsync(roleRequest);
-            if (result == null)
-                return NotFound(RoleConstant.NOT_FOUND_ROLE);
 
-            return NoContent();
+            return Ok(result);
         }
 
         [HttpDelete("{id}")]
@@ -71,10 +69,8 @@ namespace SammiShop_CleanArchitecture.API.Controllers
         public async Task<IActionResult> DeleteAsync(Guid id)
         {
             var result = await _roleService.DeleteByIdAsync(id);
-            if (result == null)
-                return NotFound(RoleConstant.NOT_FOUND_ROLE);
 
-            return NoContent();
+            return Ok(result);
         }
     }
 }

@@ -4,6 +4,7 @@ using Microsoft.IdentityModel.Tokens;
 using SammiShop_CleanArchitecture.Application.Interfaces;
 using SammiShop_CleanArchitecture.Application.Payload.DTOs;
 using SammiShop_CleanArchitecture.Application.Payload.Requests.UserRequest;
+using SammiShop_CleanArchitecture.Application.Payload.Responsi;
 using SammiShop_CleanArchitecture.Domain.Entities;
 using SammiShop_CleanArchitecture.Domain.Extensions;
 using SammiShop_CleanArchitecture.Infrastructure.Cloudinary;
@@ -17,7 +18,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
-
+//v1
 namespace SammiShop_CleanArchitecture.Persistence.Services
 {
     public class UserService : IUserService
@@ -28,12 +29,16 @@ namespace SammiShop_CleanArchitecture.Persistence.Services
         private readonly IConfiguration _configuration;
         private readonly IUnitOfWork _uow;
         private readonly ICloudinaryService _cloudinaryService;
+        private readonly ResponseObject<UserDTO> _reponseUser;
+        private readonly ResponseObject<Token> _responseToken;
         public UserService(IBaseService<User> baseUserService,
             IConfiguration configuration,
             IUnitOfWork uow,
             IEmailService emailService,
             IBaseService<ConfirmEmail> baseConfirmService,
-            ICloudinaryService cloudinaryService)
+            ICloudinaryService cloudinaryService,
+            ResponseObject<UserDTO> reponseUser,
+            ResponseObject<Token> responseToken)
         {
             _baseUserService = baseUserService;
             _configuration = configuration;
@@ -41,15 +46,18 @@ namespace SammiShop_CleanArchitecture.Persistence.Services
             _emailService = emailService;
             _baseConfirmService = baseConfirmService;
             _cloudinaryService = cloudinaryService;
+            _responseToken = responseToken;
+            _reponseUser = reponseUser;
         }
 
-        public async Task<UserDTO> CreateAsync(RegisterRequest request)
+        public async Task<ResponseObject<UserDTO>> CreateAsync(RegisterRequest request)
         {
+
             if (!ValidateUserInput(request))
-                return null;
+                return _reponseUser.Error(StatusCodes.Status400BadRequest, UserConstant.DATA_REQUEST_INVALID, null);
 
             if (await _uow.GetGenericReponsitory<User>().GetAsync(x => x.UserName.Equals(request.UserName)) != null)
-                return null;
+                return _reponseUser.Error(StatusCodes.Status400BadRequest, UserConstant.USERNAME_ISEXIST, null);
 
             var newUser = await CreateUserFromRequest(request);
             await _uow.BeginTransactionAsync();
@@ -72,14 +80,14 @@ namespace SammiShop_CleanArchitecture.Persistence.Services
                 if (await _emailService.SendEmailAsync(emailTo) != ConstantInfrastructure.SEND_MAIL_SUCCESS)
                 {
                     await _uow.RollbackTransactionAsync();
-                    return null;
+                    return _reponseUser.Error(StatusCodes.Status400BadRequest, ConstantInfrastructure.SEND_MAIL_FAIL, null);
                 }
 
                 await _uow.GetGenericReponsitory<ConfirmEmail>().CreateAsync(confirmEmail);
                 await _uow.SaveChangeAsync();
                 await _uow.CommitTransactionAsync();
 
-                return result.EntityToDTO();
+                return _reponseUser.Success(UserConstant.CREATE_USER_SUCCESS, result.EntityToDTO());
             }
             catch (Exception)
             {
@@ -147,16 +155,16 @@ namespace SammiShop_CleanArchitecture.Persistence.Services
             }
             #endregion
         }
-        public async Task<UserDTO> DeleteByIdAsync(Guid id)
+        public async Task<ResponseObject<UserDTO>> DeleteByIdAsync(Guid id)
         {
-            var user = await _baseUserService.GetByIdAsync(id);
-            if (user == null)
-                return null;
+            var entity = await _baseUserService.GetByIdAsync(id);
+            if (entity == null)
+                return _reponseUser.Error(StatusCodes.Status400BadRequest, UserConstant.NOT_FOUND_USER, null);
 
-            return user.EntityToDTO();
+            return _reponseUser.Success(UserConstant.DELETE_USER_SUCCESS, entity.EntityToDTO());
         }
 
-        public async Task<IQueryable<UserDTO>> GetAllAsync(PaginationExtension pagination)
+        public async Task<IEnumerable<UserDTO>> GetAllAsync(PaginationExtension pagination)
         {
             var users = await _baseUserService.GetAllAsync(pagination);
             return users.Select(x => x.EntityToDTO());
@@ -167,53 +175,171 @@ namespace SammiShop_CleanArchitecture.Persistence.Services
             return (await _baseUserService.GetAsync(x => x.Id == id)).EntityToDTO();
         }
 
-        public async Task<UserDTO> UpdateByAdmin(UpdateUserByAdminRequest entity)
+        public async Task<ResponseObject<UserDTO>> UpdateByAdmin(UpdateUserByAdminRequest request)
         {
-            var user = await _baseUserService.GetByIdAsync(entity.Id);
+            var user = await GetUserFromRequest(request);
             if (user == null)
-                return null;
+                return _reponseUser.Error(StatusCodes.Status400BadRequest, UserConstant.NOT_FOUND_USER, null);
 
-            user.PhoneNumber = entity.PhoneNumber;
-            user.Address = entity.Address;
-            user.UrlAvt = entity.UrlAvt;
-            user.FullName = entity.FullName;
-            user.Email = entity.Email;
-            user.RoleId = entity.RoleId;
-            user.UserName = entity.UserName;
+            var result = await _baseUserService.UpdateAsync(user);
+            return _reponseUser.Success(UserConstant.UPDATE_USER_SUCCESS, result.EntityToDTO());
 
-            return (await _baseUserService.UpdateAsync(user)).EntityToDTO();
-        }
-
-        public async Task<UserDTO> UpdateByMember(UpdateUserByMemberRequest entity)
-        {
-            var user = await _baseUserService.GetByIdAsync(entity.Id);
-            if (user == null)
-                return null;
-
-            user.PhoneNumber = entity.PhoneNumber;
-            user.Address = entity.Address;
-            user.UrlAvt = entity.UrlAvt;
-            user.FullName = entity.FullName;
-            user.Email = entity.Email;
-            user.RoleId = Guid.Parse(ConstantPersistence.MEMBER_ID);
-            user.UserName = entity.UserName;
-
-            return (await _baseUserService.UpdateAsync(user)).EntityToDTO();
-        }
-
-        #region GenerateRefreshToken
-        private string GenerateRefreshToken()
-        {
-            var random = new byte[32];
-            using (var rng = RandomNumberGenerator.Create())
+            #region SUPPORT
+            async Task<User> GetUserFromRequest(UpdateUserByAdminRequest request)
             {
-                rng.GetBytes(random);
-                return Convert.ToBase64String(random);
+                var user = await _baseUserService.GetByIdAsync(request.Id);
+                if (user == null)
+                    return null;
+
+                user.PassWord = BCrypt.Net.BCrypt.HashPassword(request.PassWord);
+                user.PhoneNumber = request.PhoneNumber;
+                user.Address = request.Address;
+                user.UrlAvt = await GetUrlImgFromIFromfile(request.UrlAvt);
+                user.FullName = request.FullName;
+                user.Email = request.Email;
+                user.RoleId = request.RoleId;
+                user.UserName = request.UserName;
+
+                return user;
+            }
+            #endregion
+        }
+
+        public async Task<ResponseObject<UserDTO>> UpdateByMember(UpdateUserByMemberRequest request)
+        {
+            var user = await GetUserFromRequest(request);
+            if (user == null)
+                return _reponseUser.Error(StatusCodes.Status400BadRequest, UserConstant.NOT_FOUND_USER, null);
+
+
+
+            var result = await _baseUserService.UpdateAsync(user);
+            return _reponseUser.Success(UserConstant.UPDATE_USER_SUCCESS, result.EntityToDTO());
+
+            async Task<User> GetUserFromRequest(UpdateUserByMemberRequest request)
+            {
+                var user = await _baseUserService.GetByIdAsync(request.Id);
+                if (user == null)
+                    return null;
+
+                user.PhoneNumber = request.PhoneNumber;
+                user.Address = request.Address;
+                user.UrlAvt = await GetUrlImgFromIFromfile(request.UrlAvt);
+                user.FullName = request.FullName;
+                user.Email = request.Email;
+                user.RoleId = Guid.Parse(ConstantPersistence.MEMBER_ID);
+                user.UserName = request.UserName;
+                return user;
             }
         }
-        #endregion
 
-        #region GenerateToken
+        public async Task<ResponseObject<Token>> RenewTokenAsync(Token request)
+        {
+            await _uow.BeginTransactionAsync();
+            try
+            {
+                var jwtTokenHandler = new JwtSecurityTokenHandler();
+                var secretKeyBytes = Encoding.UTF8.GetBytes(_configuration.GetSection("AppSettings:SecretKey").Value);
+
+                var tokenValidation = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    ValidateAudience = false,
+                    ValidateIssuer = false,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration.GetSection("AppSettings:SecretKey").Value))
+                };
+                var tokenAuthentication = jwtTokenHandler.ValidateToken(request.AccessToken, tokenValidation, out var validatedToken);
+                if (validatedToken is not JwtSecurityToken jwtSecurityToken || jwtSecurityToken.Header.Alg != SecurityAlgorithms.HmacSha256)
+                    return _responseToken.Error(StatusCodes.Status400BadRequest, ConstantPersistence.INVALID_TOKEN, null);
+
+                RefreshToken refreshToken = await _uow.GetGenericReponsitory<RefreshToken>().GetAsync(x => x.Token == request.RefreshToken);
+
+                if (refreshToken == null)
+                    return _responseToken.Error(StatusCodes.Status400BadRequest, ConstantPersistence.NOT_FOUND_TOKEN, null);
+
+                if (refreshToken.Expired < DateTime.Now)
+                    return _responseToken.Error(StatusCodes.Status400BadRequest, ConstantPersistence.TOKEN_NOT_EXPIRED, null);
+
+                var user = await _uow.GetGenericReponsitory<User>().GetAsync(x => x.Id == refreshToken.UserId);
+                if (user == null)
+                    return _responseToken.Error(StatusCodes.Status400BadRequest, ConstantPersistence.USER_NOT_EXIST, null);
+
+                var newToken = await GenerateAccessTokenAsync(user);
+                await _uow.SaveChangeAsync();
+                await _uow.CommitTransactionAsync();
+
+                var token = new Token
+                {
+                    AccessToken = newToken.AccessToken,
+                    RefreshToken = newToken.RefreshToken
+                };
+                return _responseToken.Success(ConstantPersistence.GET_TOKEN_SUCCESS, token);
+            }
+            catch (Exception ex)
+            {
+                await _uow.RollbackTransactionAsync();
+                throw;
+            }
+        }
+        public async Task<ResponseObject<Token>> LoginAsync(LoginRequest request)
+        {
+            if (ErrorRequestInput(request))
+                return _responseToken.Error(StatusCodes.Status400BadRequest, UserConstant.DATA_REQUEST_INVALID, null);
+
+            var user = await _baseUserService.GetAsync(x => x.UserName == request.UserName);
+
+            if (user == null)
+                return _responseToken.Error(StatusCodes.Status400BadRequest, UserConstant.NOT_FOUND_USER, null);
+
+            var confirmEmail = await _baseConfirmService.GetAsync(x => x.UserId == user.Id);
+            if (confirmEmail == null)
+                return _responseToken.Error(StatusCodes.Status400BadRequest, UserConstant.LOGIN_FAIL, null);
+
+            if (confirmEmail.Status == false)
+                return _responseToken.Error(StatusCodes.Status400BadRequest, UserConstant.LOGIN_FAIL, null);
+
+            if (!BCrypt.Net.BCrypt.Verify(request.Password, user.PassWord))
+                return _responseToken.Error(StatusCodes.Status400BadRequest, UserConstant.DATA_REQUEST_INVALID, null);
+
+            return _responseToken.Success(ConstantPersistence.GET_TOKEN_SUCCESS, await GenerateAccessTokenAsync(user));
+
+            bool ErrorRequestInput(LoginRequest request)
+            {
+                return string.IsNullOrEmpty(request.UserName)
+                    || string.IsNullOrEmpty(request.Password);
+            }
+        }
+
+        public async Task<string> CheckOTP(string otp)
+        {
+            var confirmEmail = await _uow.GetGenericReponsitory<ConfirmEmail>().GetAsync(x => x.Otp == otp);
+            if (confirmEmail is null)
+                return null;
+
+
+            if (confirmEmail.Expired < DateTime.Now || confirmEmail.Status)
+                return null;
+
+
+            await _uow.BeginTransactionAsync();
+            try
+            {
+                confirmEmail.Status = true;
+
+                await _uow.GetGenericReponsitory<ConfirmEmail>().UpdateAsync(confirmEmail).ConfigureAwait(false);
+                await _uow.SaveChangeAsync().ConfigureAwait(false);
+                await _uow.CommitTransactionAsync().ConfigureAwait(false);
+
+                return ConstantPersistence.ACTIVATE_USER_SUCCESS;
+            }
+            catch
+            {
+                await _uow.RollbackTransactionAsync().ConfigureAwait(false);
+                return null;
+            }
+        }
+
+        #region SUPPORT
         private async Task<Token> GenerateAccessTokenAsync(User user)
         {
             await _uow.BeginTransactionAsync();
@@ -266,115 +392,30 @@ namespace SammiShop_CleanArchitecture.Persistence.Services
                 throw;
             }
         }
+        private string GenerateRefreshToken()
+        {
+            var random = new byte[32];
+            using (var rng = RandomNumberGenerator.Create())
+            {
+                rng.GetBytes(random);
+                return Convert.ToBase64String(random);
+            }
+        }
+        private async Task<string> GetUrlImgFromIFromfile(IFormFile formFile)
+        {
+            var url = string.Empty;
 
+            if (formFile is null)
+                url = ConstantPersistence.LINK_AVATAR_DEFAULT;
+            else
+            {
+                if (!InputExtension.IsImage(formFile))
+                    return null;
+                url = await _cloudinaryService.UploadImageAsync(formFile).ConfigureAwait(false);
+            }
+
+            return url;
+        }
         #endregion
-
-        public async Task<Token> RenewTokenAsync(Token request)
-        {
-            await _uow.BeginTransactionAsync();
-            try
-            {
-                var jwtTokenHandler = new JwtSecurityTokenHandler();
-                var secretKeyBytes = Encoding.UTF8.GetBytes(_configuration.GetSection("AppSettings:SecretKey").Value);
-
-                var tokenValidation = new TokenValidationParameters
-                {
-                    ValidateIssuerSigningKey = true,
-                    ValidateAudience = false,
-                    ValidateIssuer = false,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration.GetSection("AppSettings:SecretKey").Value))
-                };
-                var tokenAuthentication = jwtTokenHandler.ValidateToken(request.AccessToken, tokenValidation, out var validatedToken);
-                if (validatedToken is not JwtSecurityToken jwtSecurityToken || jwtSecurityToken.Header.Alg != SecurityAlgorithms.HmacSha256)
-                {
-                    return new Token { RefreshToken = ConstantPersistence.INVALID_TOKEN };
-                }
-                RefreshToken refreshToken = await _uow.GetGenericReponsitory<RefreshToken>().GetAsync(x => x.Token == request.RefreshToken);
-
-                if (refreshToken == null)
-                {
-                    return new Token { RefreshToken = ConstantPersistence.NOT_FOUND_TOKEN };
-                }
-                if (refreshToken.Expired < DateTime.Now)
-                {
-                    return new Token { RefreshToken = ConstantPersistence.TOKEN_NOT_EXPIRED };
-                }
-                var user = await _uow.GetGenericReponsitory<User>().GetAsync(x => x.Id == refreshToken.UserId);
-                if (user == null)
-                {
-                    return new Token { RefreshToken = ConstantPersistence.USER_NOT_EXIST };
-                }
-                var newToken = await GenerateAccessTokenAsync(user);
-                await _uow.SaveChangeAsync();
-                await _uow.CommitTransactionAsync();
-                return new Token
-                {
-                    AccessToken = newToken.AccessToken,
-                    RefreshToken = newToken.RefreshToken
-                };
-            }
-            catch (Exception ex)
-            {
-                await _uow.RollbackTransactionAsync();
-                throw;
-            }
-        }
-        public async Task<Token> LoginAsync(LoginRequest request)
-        {
-            if (ErrorRequestInput(request))
-                return null;
-
-            var user = await _baseUserService.GetAsync(x => x.UserName == request.UserName);
-
-            if (user == null)
-                return null;
-
-            var confirmEmail = await _baseConfirmService.GetAsync(x => x.UserId == user.Id);
-            if (confirmEmail == null)
-                return null;
-
-            if (confirmEmail.Status == false)
-                return null;
-
-            if (!BCrypt.Net.BCrypt.Verify(request.Password, user.PassWord))
-                return null;
-
-            return await GenerateAccessTokenAsync(user);
-
-            bool ErrorRequestInput(LoginRequest request)
-            {
-                return string.IsNullOrEmpty(request.UserName)
-                    || string.IsNullOrEmpty(request.Password);
-            }
-        }
-
-        public async Task<string> CheckOTP(string otp)
-        {
-            var confirmEmail = await _uow.GetGenericReponsitory<ConfirmEmail>().GetAsync(x => x.Otp == otp);
-            if (confirmEmail is null)
-                return null;
-
-
-            if (confirmEmail.Expired < DateTime.Now || confirmEmail.Status)
-                return null;
-
-
-            await _uow.BeginTransactionAsync();
-            try
-            {
-                confirmEmail.Status = true;
-
-                await _uow.GetGenericReponsitory<ConfirmEmail>().UpdateAsync(confirmEmail).ConfigureAwait(false);
-                await _uow.SaveChangeAsync().ConfigureAwait(false);
-                await _uow.CommitTransactionAsync().ConfigureAwait(false);
-
-                return ConstantPersistence.ACTIVATE_USER_SUCCESS;
-            }
-            catch
-            {
-                await _uow.RollbackTransactionAsync().ConfigureAwait(false);
-                return null;
-            }
-        }
     }
 }
